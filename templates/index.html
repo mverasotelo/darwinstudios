@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Darwin Studios{% endblock %}
+{% block main %}
+    <section id="home">
+        <video alt="Darwin Studios" autoplay="1" loop="1" preload="auto">
+            <source type="video/mp4" src= "{% static 'img/darwin_presentacion.mp4' %}">
+            <source type="video/webm" src="img/darwin_presentacion.webm">
+        </video>           
+        <div class="textoSuperpuesto"><h4>Espacios al servicio de tu historia.</h4></div>            
+        <a href="#espaciosEnAccion" class="explora"><p>Explorá</p><div class="fas fa-long-arrow-alt-down"></div></a>
+        <!--<div class="home">
+            <img class="fs-images" id="img" src="" alt="studio">
+                <a id="prev" class="icon fas fa-angle-left"></a>
+                <a id="next" class="icon fas fa-angle-right"></a>
+        </div>-->
+    </section>
+    <section id="espaciosEnAccion">
+        <div class="home2">    
+            <h2>ESPACIOS EN ACCIÓN</h2>
+            <h3>Darwin Studios es un salón de eventos, complejo de locaciones y makerspace que surge de la reconversión de una fábrica antigua de más de 7.000 m² en pleno Distrito Audiovisual de Palermo.</h3>
+        </div>
+        <div class="grid">
+            <article class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>NAVE NICETO</div></article>
+            <article class="grid-elem" style="background-image:url('{% static 'img/NaveDarwin.jpg'%}')"><div class="filter"></div><div>NAVE DARWIN</div></article>
+            <article class="grid-elem" style="background-image:url('{% static 'img/NaveFabrica.jpg'%}')"><div class="filter"></div><div>NAVE FÁBRICA</div></article>  
+            <article class="grid-elem" style="background-image:url('{% static 'img/NaveHall.jpg'%}')"><div class="filter"></div><div>HALL</div></article>
+            <article class="grid-elem" style="background-image:url('{% static 'img/DStudio.jpg'%}')"><div class="filter"></div><div>D STUDIO</div></article>
+            <article class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>1+1 STUDIO</div></article>                
+            <article class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></article>
+            <article class="grid-elem" style="background-image:url('{% static 'img/TerrazaYDepositos.jpg'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></article>
+    </section>
+    <section id="servicios">
+        <div class="home2">    
+            <h2>SERVICIOS</h2>
+        </div>
+        <div class="grid">
+            <article class="grid-elem"><h4>LOCACIONES</h4><h5>Alquiler por jornada para filmaciones y producciones de fotografía.</h5></article>
+            <article class="grid-elem"><h4>EVENTOS</h4><h5>Formato híbrido y virtual con transmisión en vivo o diferido por streaming para eventos corporativos, presentación de productos, conferencias, congresos, workshops, festivales y recitales.</h5></article>
+            <article class="grid-elem"><h4>PRODUCCIÓN</h4><h5>Operación de cámaras, luces y edición para streaming en vivo o diferido. </h5></article>
+            <article class="grid-elem"><h4>MAKERSPACE</h4><h5>Oficinas privadas, mesas compartidas, estudios, depósitos y espacios de trabajo colaborativo.</h5></article>
+        </div>                
+    <h3>Contamos con protocolo COVID para cuidarnos entre todos</h3>
+    </section>
+{% endblock %}

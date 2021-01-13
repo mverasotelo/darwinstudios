@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Nosotros | Darwin Studios{% endblock %}
+{% block main %}
+    <section id="trabajos">
+        <h1>TRABAJOS</h1>            
+        <h5>Somos un complejo amplio y versátil, despierto, donde suceden cosas</h5>
+        <div class="grid">
+            <div @click="infoTrabajo(0)" class="grid-elem" style="background-image:url('{% static 'img/Converse.jpg'%}')"><div class="filter"></div><div>Converse <br>by Donhkoland</div></div>
+            <div @click="infoTrabajo(1)" class="grid-elem" style="background-image:url('{% static 'img/LaSolitaRemix.jpg'%}')"><div class="filter"></div><div>FMK, Emilia Mernes y Estani<br>Esta noche</div></div>
+            <div @click="infoTrabajo(2)" class="grid-elem" style="background-image:url('{% static 'img/YouTube.jpg'%}')"><div class="filter"></div><div>YouTube</div></div>  
+            <div @click="infoTrabajo(3)" class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>Mechi Pieretti, Cazzu, La Joaqui<br>Solita (Remix)</div></div>
+            <div @click="infoTrabajo(4)" class="grid-elem" style="background-image:url('{% static 'img/Agapornis.jpg'%}')"><div class="filter"></div><div>Agapornis<br>Perdiste por gil</div></div>
+            <div @click="infoTrabajo(5)" class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>BBVA - Mutis<br>(Evento por streaming)</div></div>                
+            <div @click="infoTrabajo(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>Sesiones<br>Buena Vibra y 1+1</div></div>
+            <div @click="infoTrabajo(7)" class="grid-elem" style="background-image:url('{% static 'img/Comicon.jpg'%}')"><div class="filter"></div><div>Sergio Instanto<br>Comicon</div></div>
+            <div @click="infoTrabajo(8)" class="grid-elem" style="background-image:url('{% static 'img/Cyberpunk.jpg'%}')"><div class="filter"></div><div>Sergio Instanto<br>CyberPunk</div></div>
+            <div @click="infoTrabajo(9)" class="grid-elem" style="background-image:url('{% static 'img/PlataQuemada.jpg'%}')"><div class="filter"></div><div>Plata Quemada</div></div>
+            <div class="pop-up" v-show="popUp">
+                <div class="cuadro">
+                    <img v-bind:src="imagenTrabajo" v-bind:alt="titulo">
+                    <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
+                    <div class="next icon fas fa-angle-right" @click="" tabindex="0"></div>
+                    <div class="back icon fas fa-angle-left" @click="" tabindex="0"></div>
+                </div>
+            </div>
+    </section>
+{% endblock %}
