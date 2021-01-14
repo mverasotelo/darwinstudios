@@ -18,7 +18,7 @@
             <div @click="infoTrabajo(9)" class="grid-elem" style="background-image:url('{% static 'img/PlataQuemada.jpg'%}')"><div class="filter"></div><div>Plata Quemada</div></div>
             <div class="pop-up" v-show="popUp">
                 <div class="cuadro">
-                    <img v-bind:src="imagenTrabajo" v-bind:alt="titulo">
+                    <div id="contenidoTrabajo"><iframe :src="videoUrl" frameborder="0" allow="accelerometer; autoplay" allowfullscreen></iframe></div>
                     <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
                     <div class="next icon fas fa-angle-right" @click="" tabindex="0"></div>
                     <div class="back icon fas fa-angle-left" @click="" tabindex="0"></div>
