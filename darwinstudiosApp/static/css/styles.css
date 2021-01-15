@@ -72,8 +72,8 @@ a{
   }
 
   @keyframes desplazarTexto{
-    from { left: -70%; }
-    to { left: 0%; }
+    from { bottom: 8% ; }
+    to { bottom: 15%; }
 }
 
   @keyframes spin {
@@ -267,11 +267,15 @@ h5{
 }
 
 #textoSuperpuesto{
-    width:50%;
+    width:30%;
     position:absolute;
+    left:10%;
     bottom: 15%;
     border:none; 
-    animation: desplazarTexto 3s linear;
+    animation: desplazarTexto 1s linear;
+    -webkit-animation:desplazarTexto 1s linear;
+    -moz-animation:desplazarTexto 1s linear;
+    -o-animation:desplazarTexto 1s linear;
 }
 
 #textoSuperpuesto h4{
@@ -283,10 +287,10 @@ h5{
     display: flex;
     flex-direction: column;
     text-align:center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     position:absolute;
     color:white;
-    bottom: 2%;
+    bottom: 3%;
     right: 2%;
     animation: jump 2s ease 0s infinite;
     -webkit-animation:jump 2s ease 0s infinite;
@@ -751,10 +755,9 @@ footer{
 }
 
 #servicios h3{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color:#e4cd05;
     text-align: center;
-    letter-spacing: 0.5rem;
     font-weight: light;
 }
 
@@ -919,7 +922,16 @@ footer{
     }
 
     #servicios .grid .grid-elem{
+        min-height:55vh;
         padding:5%;
+    }
+
+    #textoSuperpuesto{
+        width:60%;
+    }
+
+    #textoSuperpuesto h4{
+        font-size:1.6rem;
     }
 
 }
