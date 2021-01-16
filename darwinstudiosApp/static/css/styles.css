@@ -934,4 +934,13 @@ footer{
         font-size:1.6rem;
     }
 
+    #logo-Whatsapp a{
+        margin-left: 0.5rem;
+        font-size:2rem;
+    }
+    
+    #whatsapp:hover{
+        left:-9rem;
+    }
+
 }
