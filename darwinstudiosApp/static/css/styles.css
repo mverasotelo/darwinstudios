@@ -327,11 +327,10 @@ h5{
 }
 
 #logo-whatsapp{
-    text-align: center;
     display:flex;
-    align-items:center;
     padding:0.8rem;
     width:4rem;
+    z-index:12;
 }
 
 
@@ -347,6 +346,7 @@ h5{
 #logo-Whatsapp a{
     color:white;
     font-size:2.5rem;
+    text-align: center;
 }
 
 #hablemos a{
@@ -408,7 +408,7 @@ h5{
 .info p, .info p a{
     color:gray;
     margin-top:0.5rem;
-    font-size:1.2rem;
+    font-size:1rem;
     padding-top:0.5rem;
 }
 
@@ -530,7 +530,6 @@ footer{
     width:55%;
     bottom:5%;
     left:10%;
-    overflow:auto;
 }
 
 #nosotros p{
@@ -585,7 +584,7 @@ footer{
 }
 
 .filter{
-    background: rgba(0, 0, 0, .99); 
+    background: rgba(0, 0, 0, 1); 
     position: absolute;
     width: 100%;
     height: 100%;
@@ -873,26 +872,40 @@ footer{
     }
 
     .img-text{
+        position:relative;
         text-align: center;
-        margin-top:5rem;
-        width:90%;
-        height:auto;
+        margin-top:8rem;
+        padding-bottom: 2rem;
+        width:100%;
+        left:0rem;
+        background: #151515;
     }
 
     #nosotros p{
-        margin-top:0.5rem;
-        font-size:1.2rem;
-        line-height: 1.4rem;
+        width:80%;
+        margin:1rem auto;
+        font-size:1rem;
+        text-align: center;
+        line-height: 1.8rem;
+    }
+
+    #espacios .grid .grid-elem, #trabajos .grid .grid-elem {
+        height:20vh;
+    }
+
+    .grid-elem div{
+        letter-spacing: 0.2rem;
+        font-size: 0.9rem;
     }
 
     .grid{
         grid-template-columns: repeat(2, 1fr);
-        grid-gap:4px;
-        padding:0px 4px;
+        grid-gap:10px;
+        padding:10px;
     }
 
     .grid-elem{
-        min-height:30vh;
+        min-height:20vh;
     }
     
     .cuadro p{
@@ -933,14 +946,28 @@ footer{
     #textoSuperpuesto h4{
         font-size:1.6rem;
     }
-
-    #logo-Whatsapp a{
-        margin-left: 0.5rem;
-        font-size:2rem;
-    }
     
     #whatsapp:hover{
-        left:-9rem;
+        left:1rem;
     }
+
+    #whatsapp{
+        justify-content: center;
+        left: 1rem;
+        border-radius: 360%;
+        width:3.5rem;
+        height:3.5rem;
+        }
+    
+    #hablemos{
+        display: none;
+    }
+
+    #logo-Whatsapp a{
+        color:white;
+        font-size:2rem;
+        text-align: center;
+    }
+
 
 }
