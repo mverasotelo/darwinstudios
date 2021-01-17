@@ -859,7 +859,7 @@ footer{
     }
 
     h4{
-        font-size:1.3rem;
+        font-size:1rem;
     }
 
     #menu>ul{
@@ -931,12 +931,10 @@ footer{
     #servicios .grid{
         width:95%;
         margin:0 auto;
-        grid-gap:2vh;
     }
 
     #servicios .grid .grid-elem{
         min-height:55vh;
-        padding:5%;
     }
 
     #textoSuperpuesto{
@@ -957,7 +955,7 @@ footer{
         border-radius: 360%;
         width:3.5rem;
         height:3.5rem;
-        }
+    }
     
     #hablemos{
         display: none;
