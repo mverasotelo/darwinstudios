@@ -792,6 +792,36 @@ footer{
         width: 90%;
     }    
 
+    #whatsapp:hover{
+        left:1rem;
+    }
+
+    #whatsapp{
+        justify-content: center;
+        left: 1rem;
+        border-radius: 360%;
+        width:3.5rem;
+        height:3.5rem;
+    }
+    
+    #hablemos{
+        display: none;
+    }
+
+    #logo-Whatsapp a{
+        color:white;
+        font-size:2rem;
+        text-align: center;
+    }
+
+    #textoSuperpuesto{
+        width:60%;
+    }
+
+    #textoSuperpuesto h4{
+        font-size:1.6rem;
+    }
+
 }
 
 
@@ -940,36 +970,5 @@ footer{
     #servicios .grid .grid-elem{
         min-height:55vh;
     }
-
-    #textoSuperpuesto{
-        width:60%;
-    }
-
-    #textoSuperpuesto h4{
-        font-size:1.6rem;
-    }
-    
-    #whatsapp:hover{
-        left:1rem;
-    }
-
-    #whatsapp{
-        justify-content: center;
-        left: 1rem;
-        border-radius: 360%;
-        width:3.5rem;
-        height:3.5rem;
-    }
-    
-    #hablemos{
-        display: none;
-    }
-
-    #logo-Whatsapp a{
-        color:white;
-        font-size:2rem;
-        text-align: center;
-    }
-
 
 }

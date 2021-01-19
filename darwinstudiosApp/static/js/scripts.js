@@ -14,6 +14,19 @@ if(img!=null){
 }
 */
 
+chat.style.height = window.innerHeight + "px";
+
+window.addEventListener("orientationchange", e => {
+if (document.body.offsetWidth < 768) 
+chat.style.height = window.innerHeight + "px";
+}, false);
+
+window.addEventListener("resize", e => {
+if (document.body.offsetWidth < 768) 
+chat.style.height = window.innerHeight + "px";
+}, false);
+
+
 window.addEventListener('scroll', cambioHeader);
 
 let lastScroll = 0;
