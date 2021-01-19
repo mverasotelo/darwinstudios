@@ -21,14 +21,16 @@
             <h3>Darwin Studios es un salón de eventos, complejo de locaciones y makerspace que surge de la reconversión de una fábrica antigua de más de 7.000 m² en pleno Distrito Audiovisual de Palermo.</h3>
         </div>
         <div class="grid">
-            <article class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>NAVE NICETO</div></article>
-            <article class="grid-elem" style="background-image:url('{% static 'img/NaveDarwin.jpg'%}')"><div class="filter"></div><div>NAVE DARWIN</div></article>
-            <article class="grid-elem" style="background-image:url('{% static 'img/NaveFabrica.jpg'%}')"><div class="filter"></div><div>NAVE FÁBRICA</div></article>  
-            <article class="grid-elem" style="background-image:url('{% static 'img/NaveHall.jpg'%}')"><div class="filter"></div><div>HALL</div></article>
-            <article class="grid-elem" style="background-image:url('{% static 'img/DStudio.jpg'%}')"><div class="filter"></div><div>D STUDIO</div></article>
-            <article class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>1+1 STUDIO</div></article>                
-            <article class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></article>
-            <article class="grid-elem" style="background-image:url('{% static 'img/TerrazaYDepositos.jpg'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></article>
+            <div @click="infoEspacio(0)" class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>NAVE NICETO</div></div>
+            <div @click="infoEspacio(1)" class="grid-elem" style="background-image:url('{% static 'img/NaveDarwin.jpg'%}')"><div class="filter"></div><div>NAVE DARWIN</div></div>
+            <div @click="infoEspacio(2)"class="grid-elem" style="background-image:url('{% static 'img/NaveFabrica.jpg'%}')"><div class="filter"></div><div>NAVE FÁBRICA</div></div>  
+            <div @click="infoEspacio(3)" class="grid-elem" style="background-image:url('{% static 'img/NaveHall.jpg'%}')"><div class="filter"></div><div>HALL</div></div>
+            <div @click="infoEspacio(4)" class="grid-elem" style="background-image:url('{% static 'img/DStudio.jpg'%}')"><div class="filter"></div><div>D STUDIO</div></div>
+            <div @click="infoEspacio(5)" class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>1+1 STUDIO</div></div>                
+            <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>
+            <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/TerrazaYDepositos.jpg'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></div>
+        </div>
+
     </section>
     <section id="servicios">
         <div class="home2">    
