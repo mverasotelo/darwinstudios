@@ -259,6 +259,7 @@ h5{
     display:flex;
     min-width:100%;
     height:100vh;
+    height:calc(var(--vh,1vh)*100);
 }
 
 #home video{
@@ -703,7 +704,7 @@ footer{
 /*home2*/ 
 
 
-#espaciosEnAccion, #servicios{
+#explora, #servicios{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -719,12 +720,12 @@ footer{
     align-items: center;
 }
 
-#espaciosEnAccion .grid{
+#explora .grid{
     padding:0px;
     grid-gap:2px;
 }
 
-#espaciosEnAccion .grid .grid-elem{
+#explora .grid .grid-elem{
     min-height:24vh;   
 }
 
@@ -812,11 +813,6 @@ footer{
 
     #textoSuperpuesto h4{
         font-size:1.6rem;
-    }
-
-    #home{
-        height:100vh;
-        height:calc(var(--vh,1vh)*100);
     }
 }
 
@@ -954,7 +950,7 @@ footer{
         margin:1rem auto;
     }
 
-    #espaciosEnAccion .grid .grid-elem{
+    #explora .grid .grid-elem{
         min-height:12vh;   
     }
 
@@ -963,12 +959,20 @@ footer{
         margin:0 auto;
     }
 
-    #servicios .grid .grid-elem{
-        min-height:55vh;
+    #home{
+        align-items:center;
+    }
+
+    #home video{
+        width:100%;
     }
 
     #textoSuperpuesto{
-        width:60%;
+        width:80%;
+        margin:0 auto; 
     }
 
+    #textoSuperpuesto h4{
+        font-size:1.5rem;
+    }
 }

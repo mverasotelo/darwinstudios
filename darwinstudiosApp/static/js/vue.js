@@ -8,9 +8,6 @@ window.onload= function(){
     });
 }
 
-
-
-
 // abrir/cerrar menu
 new Vue({
     el:"#menuDesp",

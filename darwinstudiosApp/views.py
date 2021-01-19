@@ -27,7 +27,7 @@ def contacto(request):
             email=formulario.cleaned_data['email']
             telefono=str(formulario.cleaned_data['telefono'])
             mensaje=formulario.cleaned_data['mensaje']
-            confirmacion="Tu mensaje ha sido enviado"
+            confirmacion="¡Muchas gracias!"
             send_mail("Consulta de "+nombre, "\n Nombre: "+nombre+"\n Email: "+email+"\n Teléfono: "+telefono+"\n Mensaje: "+mensaje, "merverasotelo@gmail.com", [""], fail_silently=False)
         return render(request,"contacto.html", {"formulario": FormContacto(), "confirmacion":confirmacion})
     else:
