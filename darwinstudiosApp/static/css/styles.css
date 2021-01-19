@@ -40,6 +40,10 @@ html{
     color:white;
 }
 
+html, body { 
+    height: 100% 
+}
+
 *{
     box-sizing: border-box;
     margin:0;
@@ -267,11 +271,11 @@ h5{
 }
 
 #textoSuperpuesto{
-    width:30%;
+    width:25%;
     position:absolute;
     left:10%;
     bottom: 15%;
-    border:none; 
+    border-bottom: solid 1px #e4cd05;
     animation: desplazarTexto 1s linear;
     -webkit-animation:desplazarTexto 1s linear;
     -moz-animation:desplazarTexto 1s linear;
