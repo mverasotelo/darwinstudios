@@ -185,7 +185,7 @@ header a{
 }
 
 #menu ul li a:hover{
-    color:#ff8000;
+    color:#f8a52d;
 }
 
 
@@ -200,7 +200,7 @@ h1{
     color:#eee;
     letter-spacing: 1rem;
     font-size:3rem;
-    border-bottom:solid 1px #ff8000;
+    border-bottom:solid 1px #f8a52d;
 
 }
 
@@ -210,7 +210,7 @@ h2{
     font-size:2.8rem;
     text-align: left;
     letter-spacing: 1rem;
-    border-bottom:solid 1px #ff8000;
+    border-bottom:solid 1px #f8a52d;
 }
 
 h3{
@@ -231,7 +231,7 @@ h4{
     text-align: center;
     font-size:1.3rem;
     letter-spacing: 0.5rem;
-    border-bottom:solid 1px #ff8000;
+    border-bottom:solid 1px #f8a52d;
     padding:1rem 0rem;
 }
 
@@ -260,6 +260,7 @@ h5{
     min-width:100%;
     height:100vh;
     height:calc(var(--vh,1vh)*100);
+    background: #181818;
 }
 
 #home video{
@@ -272,7 +273,7 @@ h5{
     position:absolute;
     left:10%;
     bottom: 15%;
-    border-bottom: solid 1px #ff8000;
+    border-bottom: solid 1px #f8a52d;
     animation: desplazarTexto 1s linear;
     -webkit-animation:desplazarTexto 1s linear;
     -moz-animation:desplazarTexto 1s linear;
@@ -301,6 +302,10 @@ h5{
 
 .explora .fas{
     color:#ff8000;
+}
+
+#explora .explora{
+    right: 50%;
 }
 
 #whatsapp{
@@ -460,14 +465,14 @@ h5{
     margin-top:0.8rem;
     text-align:center;
     background:transparent;
-    border:solid 1px #ff8000;
+    border:solid 1px #f8a52d;
     padding: 0.7rem 1.2rem;
     font-size:1.2rem;
     color:#f4f4f4;
 }
 
 .formulario form input[type="submit"]:hover{
-    background: #ff8000;
+    background: #f8a52d;
     color:black;
 }   
 
@@ -525,13 +530,17 @@ footer{
     font-size:2rem;
 }
 
-
-.img-text{
-    position:absolute;
-    width:55%;
-    bottom:5%;
-    left:10%;
+#nosotros{
+    display:flex;
+    justify-content: space-between;
 }
+
+.textoNosotros{
+    width:60%;
+    margin:3rem;
+    padding-top:5.5rem;
+}
+
 
 #nosotros p{
     font-family:'Fogie-Light','Work Sans', sans-serif;
@@ -539,6 +548,12 @@ footer{
     font-size:1.1rem;
     text-align: left;
     line-height: 2.2rem;
+    padding-top:1rem;
+}
+
+#nosotros img{
+    width:40%;
+    object-fit: cover;
 }
    
 .scroll-down{
@@ -582,6 +597,7 @@ footer{
     justify-content: center;
     align-items: center;
     padding:1rem;
+    border:none;
 }
 
 .filter{
@@ -705,13 +721,14 @@ footer{
 
 
 #explora, #servicios{
+    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
     padding:18vh 0 18vh 0;
 }
 
-.home2{
+.bajada{
     width:80%;
     margin:1.5rem auto;
     display:flex;
@@ -732,7 +749,7 @@ footer{
 /*home3*/
 #servicios{
     background: #181818;
-    padding-bottom:18vh;
+    padding-bottom:24vh;
 }
 
 #servicios .grid{
@@ -754,12 +771,6 @@ footer{
     padding-top:10%;
 }
 
-#servicios h3{
-    font-size: 1.2rem;
-    color:#ff8000;
-    text-align: center;
-    font-weight: light;
-}
 
 @media screen and (max-width:1250px){
     .grid{
@@ -775,8 +786,8 @@ footer{
     
     h5{
         letter-spacing: 0.2rem;
-        font-size:1.1rem;
-        line-height: 1.3rem;
+        font-size:1rem;
+        line-height: 1.2rem;
         width:95%;
         margin:0 auto;
     }
@@ -813,6 +824,31 @@ footer{
 
     #textoSuperpuesto h4{
         font-size:1.6rem;
+    }
+
+    .explora {
+        right: 50%;
+    }
+
+    .explora p{
+        display:none;
+    }
+
+    #servicios{
+        padding-bottom:5vh;
+    }
+
+    #nosotros img{
+        display: none;
+    }
+
+    .textoNosotros{
+        position:relative;
+        text-align: center;
+        margin-top:4rem;
+        width:100%;
+        left:0rem;
+        background: #151515;
     }
 }
 
@@ -897,24 +933,6 @@ footer{
         font-size:1.5rem;
     }
 
-    .img-text{
-        position:relative;
-        text-align: center;
-        margin-top:8rem;
-        padding-bottom: 2rem;
-        width:100%;
-        left:0rem;
-        background: #151515;
-    }
-
-    #nosotros p{
-        width:80%;
-        margin:1rem auto;
-        font-size:1rem;
-        text-align: center;
-        line-height: 1.8rem;
-    }
-
     #espacios .grid .grid-elem, #trabajos .grid .grid-elem {
         height:20vh;
     }
@@ -946,8 +964,9 @@ footer{
         height:5rem;    
     }
 
-    .home2{
+    .bajada{
         margin:1rem auto;
+        width: 90%;
     }
 
     #explora .grid .grid-elem{
@@ -974,5 +993,39 @@ footer{
 
     #textoSuperpuesto h4{
         font-size:1.5rem;
+    }
+}
+
+@media screen and (max-width:479px){
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.5rem;
+        letter-spacing: 0.4rem;
+    }
+
+    h3{
+        font-size:1rem;
+        line-height: 1.3rem;
+    }
+
+    h4{
+        font-size:1.2rem;
+    }
+
+    h5{
+        font-size:0.8rem;
+        width:100%;
+    }
+
+    #textoSuperpuesto h4{
+        font-size:1.2rem;
+    }
+
+    #textoSuperpuesto{
+        bottom: 10%;
+        animation: none;
     }
 }

@@ -7,8 +7,8 @@
             <source type="video/mp4" src= "{% static 'img/darwin_presentacion.mp4' %}">
             <source type="video/webm" src="img/darwin_presentacion.webm">
         </video>           
-        <div id="textoSuperpuesto"><h4>NUESTRO ESPACIO AL SERVICIO DE TU HISTORIA</h4></div>            
-        <a href="#explora" class="explora"><p>Explorá</p><div class="fas fa-long-arrow-alt-down"></div></a>
+        <div id="textoSuperpuesto"><h4>Espacios al servicio de tu historia</h4></div>            
+        <a href="#explora" class="explora"><p>Ver más</p><div class="fas fa-long-arrow-alt-down"></div></a>
         <!--<div class="home">
             <img class="fs-images" id="img" src="" alt="studio">
                 <a id="prev" class="icon fas fa-angle-left"></a>
@@ -16,7 +16,7 @@
         </div>-->
     </section>
     <section id="explora">
-        <div class="home2">    
+        <div class="bajada">    
             <h2>Explorá</h2>
             <h3>Darwin Studios es una fábrica antigua de más de 7.000 m² reconvertida en complejo de locaciones, salón de eventos, espacio de oficinas y estudios privados en pleno Distrito Audiovisual de Palermo.</h3>
         </div>
@@ -29,11 +29,11 @@
             <div @click="infoEspacio(5)" class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>1+1 STUDIO</div></div>                
             <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>
             <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/TerrazaYDepositos.jpg'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></div>
+            <a href="#servicios" class="explora"><div class="fas fa-long-arrow-alt-down"></div></a>
         </div>
-
     </section>
     <section id="servicios">
-        <div class="home2">    
+        <div class="bajada">    
             <h2>Servicios</h2>
         </div>
         <div class="grid">
@@ -42,6 +42,5 @@
             <article class="grid-elem"><h4>Streaming</h4><h5>Operación de cámaras, luces y edición para transmisión por streaming en vivo o diferido.</h5></article>
             <article class="grid-elem"><h4>In-house</h4><h5>Alquiler de oficinas y estudios privados, mesas compartidas, salas de reunión y depósitos. </h5></article>
         </div>                
-    <h3>Contamos con protocolo COVID para cuidarnos entre todos</h3>
     </section>
 {% endblock %}
