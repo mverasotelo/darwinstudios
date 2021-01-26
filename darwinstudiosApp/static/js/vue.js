@@ -31,7 +31,7 @@ new Vue({
 });
 
 new Vue({
-    el:"#espacios",
+    el:"#explora",
     delimiters:['{[',']}'],
     data:{
         espacios:["NAVE NICETO", "NAVE DARWIN", "NAVE FÁBRICA", "HALL", "D-STUDIO", "1+1 STUDIO", "EXTERIORES", "TERRAZA Y DEPÓSITOS"],
@@ -48,42 +48,87 @@ new Vue({
         titulo:"",
         popUp:"",
         espacio:"",
-        imagenes:["/static/img/NaveNiceto2.jpg","/static/img/Cyberpunk.jpg","/static/img/NaveFabrica2.jpg","/static/img/NaveHall2.jpeg","/static/img/Dstudio2.jpg","/static/img/1+1studio2.jpg","/static/img/Exteriores2.jpg","/static/img/Terraza2.jpg"],
+        imagenes:[["/static/img/Niceto1.jpg"],["/static/img/Cyberpunk.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/Exteriores2.jpg"],["/static/img/Terraza2.jpg"]],
+        tempFoto:0,
+        tempEspacio:"",
         imagenEspacio:""
         },
     methods:{
         infoEspacio: function(n){
             this.popUp="popUp";
+            this.tempEspacio=n;
             this.titulo=this.espacios[n];
             this.caracteristica=this.caracteristicas[n];  
-            this.imagenEspacio=this.imagenes[n];
+            this.imagenEspacio=this.imagenes[n][0];
             document.body.style.overflow='hidden';
         },
         cerrarCuadro: function(){
             this.popUp="";
             document.body.style.overflow ='auto';
         },
+        pasarFoto: function(){
+            if(this.tempFoto<(this.imagenes[this.tempEspacio].length)-1){
+                this.tempFoto=this.tempFoto+1;
+            }
+            else{
+                this.tempFoto=0;
+            }
+            this.imagenEspacio=this.imagenes[this.tempEspacio][this.tempFoto];
+        },
+        retrocederFoto: function(){
+            if(this.tempFoto>0){
+                this.tempFoto=this.tempFoto-1;
+            }
+            else{
+                this.tempFoto=(this.imagenes[this.tempEspacio].length)-1;
+            }
+            this.imagenEspacio=this.imagenes[this.tempEspacio][this.tempFoto];
+        }
     }
 });
 
 new Vue({
-    el:"#trabajos",
+    el:"#producciones",
     data:{
         popUp:"",
-        espacio:"",
+        producciones:["Converse", "Esta noche🌙","You Tube","Solita RMX","Perdiste por gil","Mutis","Buena Vibra y 1+1","Comicon","Cyberpunk","Plata Quemada"],
         videos:["https://www.youtube.com/embed/nThgp6a_OZM","https://www.youtube.com/embed/Z-TkiF4xeJ0","","https://www.youtube.com/embed/RCnursIWCmY","https://www.youtube.com/embed/Z9IMV4fFsoI","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/0MGCMyVVpHc","","https://www.youtube.com/embed/SUschdjn0mc"],   
-        videoUrl:""
+        videoUrl:"",
+        imagenes:[["/static/img/Converse1.jpg","/static/img/Converse2.jpg","/static/img/Converse3.jpg","/static/img/Converse4.jpg"],["/static/img/Converse2.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg","/static/img/Dstudio3.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/Exteriores2.jpg"],["/static/img/Terraza2.jpg"]],
+        imagenTrabajo:"",
+        tempFoto:0,
+        tempTrabajo:0,
+        contenidoTrabajo:""
     },
     methods:{
         infoTrabajo: function(n){
+            this.tempEspacio=n;
             this.popUp="popUp";
             this.videoUrl=this.videos[n];
-            document.body.style.overflow='hidden';
+            this.imagenTrabajo=this.imagenes[n][0];
+            this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[n]+"' title='"+this.producciones[n]+"'>";
         },
         cerrarCuadro: function(){
             this.popUp="";
-            document.body.style.overflow ='auto';
             this.videoUrl="";
         },
+        pasarFoto: function(){
+            if(this.tempFoto<(this.imagenes[this.tempTrabajo].length)-1){
+                this.tempFoto=this.tempFoto+1;
+            }
+            else{
+                this.tempFoto=0;
+            }
+            this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+        },
+        retrocederFoto: function(){
+            if(this.tempFoto>0){
+                this.tempFoto=this.tempFoto-1;
+            }
+            else{
+                this.tempFoto=(this.imagenes[this.tempTrabajo].length)-1;
+            }
+            this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+        }
     }
 });

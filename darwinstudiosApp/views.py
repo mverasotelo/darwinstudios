@@ -12,8 +12,8 @@ def index(request):
 def espacios(request):
     return render(request,"espacios.html")
 
-def trabajos(request):
-    return render(request,"trabajos.html")
+def producciones(request):
+    return render(request,"producciones.html")
 
 def nosotros(request):
     return render(request,"nosotros.html")
