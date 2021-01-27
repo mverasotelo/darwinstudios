@@ -239,12 +239,21 @@ h5{
     height:4rem;
 }
 
-#home{
+#home, #explora, #servicios{
     position:relative;
     display:flex;
-    min-width:100%;
+    flex-direction: column;
+    justify-content: center;
     height:100vh;
     height:calc(var(--vh,1vh)*100);
+}
+
+#explora{
+    height:120vh;
+}
+
+#servicios{
+    height:95vh;
 }
 
 #home video{
@@ -686,21 +695,6 @@ footer{
     color:white;
 }
 
-/*home2*/ 
-
-
-#explora, #servicios{
-    position: relative;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    padding:19vh 0 19vh 0;
-}
-
-#servicios{
-    padding:18vh 0 24vh 0;
-}
-
 .bajada{
     width:80%;
     margin:1.5rem auto;
@@ -720,7 +714,6 @@ footer{
     min-height:24vh;   
 }
 
-/*home3*/
 #servicios, #home{
     background: #181818;
 }
@@ -760,7 +753,7 @@ footer{
     
     h5{
         letter-spacing: 0.2rem;
-        font-size:1rem;
+        font-size:0.8rem;
         line-height: 1.2rem;
         width:95%;
         margin:0 auto;
@@ -785,6 +778,14 @@ footer{
         height:60vh;
         width: 100%;
         border:solid #111 5px;  
+    }
+
+    #servicios{
+        height:100vh;
+    }
+
+    #explora{
+        height:110vh;
     }
 
     #whatsapp:hover{
@@ -819,10 +820,6 @@ footer{
 
     .ver-mas p{
         display:none;
-    }
-
-    #servicios{
-        padding:7vh 0;
     }
 
     .pop-up{
@@ -894,12 +891,12 @@ footer{
     }
 
     h3{
-        font-size:1rem;
-        line-height: 1.5rem;
+        font-size:0.8rem;
+        line-height: 1.4rem;
     }
 
     h4{
-        font-size:1.4rem;
+        font-size:1.2rem;
     }
 
     .contacto h4{
@@ -956,10 +953,6 @@ footer{
         min-height:12vh;   
     }
 
-    #explora, #servicios{
-        padding:9vh 0 9vh 0;
-    }
-
     #servicios .grid{
         width:95%;
         margin:0 auto;
@@ -974,8 +967,9 @@ footer{
     }
 
     #textoSuperpuesto{
+        position:static;
         width:80%;
-        margin:0 auto; 
+        margin-top: 10%;
     }
 
     #textoSuperpuesto h4{
@@ -1024,6 +1018,5 @@ footer{
 
     #textoSuperpuesto{
         bottom: 8%;
-        animation: none;
     }
 }

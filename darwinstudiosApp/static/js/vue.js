@@ -12,8 +12,8 @@ Vue.directive("swipeleft", {
         mc.on("swipeleft", binding.value);
       }
     }
-});*/
-
+});
+*/
 
 //cargar pagina
 window.onload= function(){
