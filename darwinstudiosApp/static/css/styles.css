@@ -244,16 +244,19 @@ h5{
     display:flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#home{
     height:100vh;
     height:calc(var(--vh,1vh)*100);
 }
 
 #explora{
-    height:120vh;
+    padding:21vh 0 21vh 0;
 }
 
 #servicios{
-    height:95vh;
+    padding:24vh 0 24vh 0;
 }
 
 #home video{
@@ -780,10 +783,6 @@ footer{
         border:solid #111 5px;  
     }
 
-    #servicios, #explora{
-        height:100vh;
-    }
-
     #whatsapp:hover{
         left:1rem;
     }
@@ -962,12 +961,6 @@ footer{
         width:100%;
     }
 
-    #textoSuperpuesto{
-        position:static;
-        width:80%;
-        margin-top: 10%;
-    }
-
     #textoSuperpuesto h4{
         font-size:1.5rem;
     }
@@ -985,6 +978,13 @@ footer{
 }
 
 @media screen and (max-width:360px){
+
+    #textoSuperpuesto{
+        position:static;
+        width:80%;
+        margin-top: 10%;
+    }
+    
     h1{
         font-size:2rem;
     }
