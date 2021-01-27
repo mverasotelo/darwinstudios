@@ -30,7 +30,7 @@
             <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>
             <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/Terraza.png'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></div>
             <div class="pop-up" v-show="popUp">
-                <div class="cuadro" scrolling="yes">
+                <div class="cuadro" scrolling="yes" v-on:swipeleft="pasarFoto">
                     <div class="carrousel">
                         <img v-bind:src="imagenEspacio" v-bind:alt="titulo" v-bind:title="titulo">
                         <div id="next" class="icon fas fa-angle-right" @click="pasarFoto()" tabindex="0"></div>

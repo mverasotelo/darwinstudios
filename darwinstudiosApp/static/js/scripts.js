@@ -110,5 +110,4 @@ mc.add(new Hammer.Swipe({
 
 mc.on('swipeup', function () {
     cerrarMenu()
-});
-*/
+});*/

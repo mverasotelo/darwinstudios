@@ -1,3 +1,20 @@
+/*import {VueHammer} from 'vue2-hammer';
+Vue.use(VueHammer);
+
+
+Vue.directive("swipeleft", {
+    bind: function(el, binding) {
+      if (typeof binding.value === "function"){
+        var mc = new Hammer(el);
+        mc.add(new Hammer.Swipe({ 
+        direction: Hammer.DIRECTION_LEFT 
+        }));
+        mc.on("swipeleft", binding.value);
+      }
+    }
+});*/
+
+
 //cargar pagina
 window.onload= function(){
     new Vue({

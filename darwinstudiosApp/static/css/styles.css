@@ -256,7 +256,7 @@ h5{
     width:25%;
     position:absolute;
     left:10%;
-    bottom: 15%;
+    bottom: 17%;
     border-bottom: solid 1px #f8a52d;
     animation: desplazarTexto 1s linear;
     -webkit-animation:desplazarTexto 1s linear;
@@ -459,6 +459,7 @@ h5{
 }
 
 footer{
+    text-align: center;
     bottom:0;
     width:100%;
     background:rgb(50,50,50);
@@ -693,7 +694,7 @@ footer{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    padding:21vh 0 21vh 0;
+    padding:19vh 0 19vh 0;
 }
 
 #servicios{
@@ -737,7 +738,7 @@ footer{
     flex-direction: column;
     justify-content: flex-start;
     border:solid 2px #333;
-    padding:7%;
+    padding: 0 7%;
 }
 
 #servicios .grid .grid-elem h5{
@@ -955,6 +956,10 @@ footer{
         min-height:12vh;   
     }
 
+    #explora, #servicios{
+        padding:9vh 0 9vh 0;
+    }
+
     #servicios .grid{
         width:95%;
         margin:0 auto;
@@ -989,7 +994,7 @@ footer{
     }
 }
 
-@media screen and (max-width:479px){
+@media screen and (max-width:360px){
     h1{
         font-size:2rem;
     }
@@ -1014,11 +1019,11 @@ footer{
     }
 
     #textoSuperpuesto h4{
-        font-size:1.2rem;
+        font-size:1rem;
     }
 
     #textoSuperpuesto{
-        bottom: 10%;
+        bottom: 8%;
         animation: none;
     }
 }
