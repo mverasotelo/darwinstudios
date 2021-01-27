@@ -780,12 +780,8 @@ footer{
         border:solid #111 5px;  
     }
 
-    #servicios{
+    #servicios, #explora{
         height:100vh;
-    }
-
-    #explora{
-        height:110vh;
     }
 
     #whatsapp:hover{
@@ -891,7 +887,7 @@ footer{
     }
 
     h3{
-        font-size:0.8rem;
+        font-size:0.9rem;
         line-height: 1.4rem;
     }
 
@@ -1008,7 +1004,6 @@ footer{
     }
 
     h5{
-        font-size:0.8rem;
         width:100%;
     }
 
