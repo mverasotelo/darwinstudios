@@ -240,6 +240,7 @@ h5{
 }
 
 #home, #explora, #servicios{
+    overflow: hidden;
     position:relative;
     display:flex;
     flex-direction: column;
@@ -741,7 +742,7 @@ footer{
     padding-top:10%;
 }
 
-@media screen and (max-width:1250px){
+@media screen and (max-width:960px){
     .grid{
         grid-template-columns: repeat(2, 1fr);
         column-gap:4px;
@@ -824,7 +825,7 @@ footer{
 
 
 
-@media screen and (max-width:720px){
+@media screen and (max-width:767px){
 
     .loader{
         width:30px;
@@ -836,6 +837,15 @@ footer{
 
     .header-container{
         width:90%;
+    }
+
+
+    #explora{
+        padding:10% 0 15vh;
+    }
+    
+    #servicios{
+        padding:15% 0;
     }
 
     .ver-mas{
@@ -961,8 +971,13 @@ footer{
         width:100%;
     }
 
+    #textoSuperpuesto{
+        bottom:15%;
+        width:80%;
+    }
+
     #textoSuperpuesto h4{
-        font-size:1.5rem;
+        font-size:1.0rem;
     }
 
     #nosotros img{
@@ -979,12 +994,6 @@ footer{
 
 @media screen and (max-width:360px){
 
-    #textoSuperpuesto{
-        position:static;
-        width:80%;
-        margin-top: 10%;
-    }
-    
     h1{
         font-size:2rem;
     }
@@ -1008,7 +1017,7 @@ footer{
     }
 
     #textoSuperpuesto h4{
-        font-size:1rem;
+        font-size:0.8rem;
     }
 
     #textoSuperpuesto{
