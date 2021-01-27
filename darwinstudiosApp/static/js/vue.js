@@ -8,7 +8,6 @@ window.onload= function(){
     });
 }
 
-// abrir/cerrar menu
 new Vue({
     el:"#menuDesp",
     data:{
@@ -16,16 +15,30 @@ new Vue({
         menuClass:"cerrarMenu",
     },
     methods:{
+/*cambioHeader: function(){
+            if (this.currentScroll == 0){
+                this.headerClass="header";
+                //header.style="transition:ease 0.5s";
+                return;
+            }
+            if (this.currentScroll > this.lastScroll) {
+                this.headerClass="header scroll-down";
+            }else if (this.currentScroll < this.lastScroll){
+                this.headerClass="header scroll-up";
+                //this.headerClass="transition:ease 0.5s";
+            }
+            this.lastScroll = this.currentScroll;
+        },*/
         desplegarMenu: function(){
-                if(this.iconoMenu=="icon fas fa-bars"){
-                    this.iconoMenu="icon fas fa-times";
-                    this.menuClass="abrirMenu";
-                    document.body.style.overflow='hidden';
-                }else{
-                    this.iconoMenu="icon fas fa-bars";
-                    this.menuClass="cerrarMenu";
-                    document.body.style.overflow ='auto';
-                }
+            if(this.iconoMenu=="icon fas fa-bars"){
+                this.iconoMenu="icon fas fa-times";
+                this.menuClass="abrirMenu";
+                document.body.style.overflow='hidden';
+            }else{
+                this.iconoMenu="icon fas fa-bars";
+                this.menuClass="cerrarMenu";
+                document.body.style.overflow ='auto';
+            }
         },
     }
 });

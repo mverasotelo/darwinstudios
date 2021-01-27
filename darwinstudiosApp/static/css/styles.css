@@ -602,7 +602,7 @@ footer{
     bottom:0;
     left:0;
     right:0;
-    z-index:20;
+    z-index:40;
     background:rgba(0,0,0,0.5);
     backdrop-filter:blur(2px);
 }
@@ -770,7 +770,7 @@ footer{
         width:100%;
         height:auto;
         left:0;
-        top:calc(12%);    
+        top:0;    
         border:none;
     }
 
@@ -783,6 +783,7 @@ footer{
     #explora .pop-up .cuadro .carrousel{
         height:60vh;
         width: 100%;
+        border:solid #111 5px;  
     }
 
     #whatsapp:hover{
@@ -820,7 +821,11 @@ footer{
     }
 
     #servicios{
-        padding-bottom:5vh;
+        padding:7vh 0;
+    }
+
+    .pop-up{
+        background:#111;
     }
 }
 

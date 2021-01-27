@@ -35,7 +35,7 @@ function cambioHeader(){
     }
     if (currentScroll > lastScroll) {
         header.classList="header scroll-down";
-    } else if (currentScroll < lastScroll) {
+    }else if (currentScroll < lastScroll){
         header.classList="header scroll-up";
         header.style="transition:ease 0.5s";
     }
