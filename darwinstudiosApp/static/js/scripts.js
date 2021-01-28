@@ -32,7 +32,7 @@ function cambioHeader(){
     }
     lastScroll = currentScroll;
 }
-
+/*
 var mc = new Hammer.Manager(menu);
 
 mc.add(new Hammer.Swipe({
@@ -49,4 +49,4 @@ function cerrarMenu(){
         iconoMenu.classList="icon fas fa-bars";
         menu.classList="cerrarMenu";
     }
-}
+}*/

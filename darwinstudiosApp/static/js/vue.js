@@ -135,7 +135,7 @@ new Vue({
         },
         cerrarCuadro: function(){
             this.popUp="";
-            this.videoUrl="";
+            this.videoUrl=null;
             this.tempFoto=0;
             document.body.style.overflow='auto';
             },

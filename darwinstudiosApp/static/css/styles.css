@@ -9,6 +9,31 @@
     font-style: normal;
 }
 
+@keyframes desplazarTexto{
+    from { bottom: 8% ; }
+    to { bottom: 15%; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes jump {
+    0% { transform: translate(0, 0%); }
+    50% { transform: translate(0, -50%); }
+    100% { transform: translate(0,0%); }
+}
+
+@keyframes menuAbrir{
+    0%{
+        top:-60rem;
+    }
+    100%{
+        top:0;
+    }
+}
+
 html{
     font-size:90%;
     font-family:'Fogie-Light','Work Sans', sans-serif;
@@ -31,8 +56,10 @@ ul{
 
 a{
     text-decoration:none;
+    color:white;
 }
 
+/*scroll*/
 .pop-up::-webkit-scrollbar, body::-webkit-scrollbar{
     width:0.7rem;
 }
@@ -47,6 +74,8 @@ a{
     border: solid 3px transparent;
 }
 
+
+/*loader*/
 #loader {
     position:fixed;
     top:calc(50% - 25px);
@@ -60,40 +89,19 @@ a{
     -webkit-animation:spin 2s linear infinite;
     -moz-animation:spin 2s linear infinite;
     -o-animation:spin 2s linear infinite;
-    z-index:30;
-  }
-
-  @keyframes desplazarTexto{
-    from { bottom: 8% ; }
-    to { bottom: 15%; }
-}
-
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  @keyframes jump {
-    0% { transform: translate(0, 0%); }
-    50% { transform: translate(0, -50%); }
-    100% { transform: translate(0,0%); }
+    z-index:20;
   }
 
 
 /*header*/
-
 .header{
-    z-index:25;
+    z-index:10;
     background:transparent;
     position: fixed;
     width:100%;
     top:0;
     height:6rem;    
     display:flex;
-}
-
-header a{
-    color:white;
 }
 
 .header-container{
@@ -104,23 +112,38 @@ header a{
     width:95%;
 }
 
+.logo{
+    position:relative;
+    z-index:20;
+    margin:0;   
+    height:4rem;
+}
+
 .header-container li i{
+    position: relative;;
+    cursor:pointer;
     margin-left:1rem;
     z-index:20;
 }
 
-#menuIcon{
-    cursor:pointer;
+.scroll-down{
+    transform: translate(0, -100%);
+    transition:all 0.5s ease;    
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
-.abrirMenu{
-    display:block;
+.scroll-up{
+    background:rgba(0,0,0,.7);
+    transform: none;
+    transition:all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
-.cerrarMenu{
-    display:none;
-}
-
+/*menu*/
 #menu{
     overflow: hidden;
     position:fixed;
@@ -142,18 +165,12 @@ header a{
     display:none;
 }
 
-.active{
-    color:ff8000;
+.abrirMenu{
+    display:block;
 }
 
-
-@keyframes menuAbrir{
-    0%{
-        top:-60rem;
-    }
-    100%{
-        top:0;
-    }
+.cerrarMenu{
+    display:none;
 }
 
 #menu>ul{
@@ -177,7 +194,6 @@ header a{
 
 
 /*main*/
-
 h1{
     padding:0.5rem;
     width:80%;
@@ -225,15 +241,62 @@ h5{
     color:#aaa;
     margin:0;
     padding:0.5rem;
+    padding-top:10%;
 }
 
-.logo{
-    position:relative;
-    z-index:20;
-    margin:0;   
-    height:4rem;
+/*whatsapp*/
+#whatsapp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap:1rem;
+    position:fixed;
+    bottom:1rem;
+    left: -7rem;
+    z-index:8;
+    padding:0.5rem;
+    border-radius: 0 25px 25px 0;
+    transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+    background:rgba(0,179,44,0.5);
+    cursor: pointer;
 }
 
+#hablemos{
+    text-align: center;
+    width:6rem;
+}
+
+#logo-whatsapp{
+    display:flex;
+    padding:0.8rem;
+    width:4rem;
+}
+
+
+#whatsapp:hover{
+    left:0;
+    transition: left 0.5s linear;
+    -o-transition: left 0.5s linear;
+    -webkit-transition: left 0.5s linear;
+    -moz-transition: left 0.5s linear;
+}
+
+
+#logo-Whatsapp a{
+    color:white;
+    font-size:2.5rem;
+    text-align: center;
+}
+
+#hablemos a{
+    color:white;
+    font-size:1rem;
+}
+
+/*home*/
 #home, #explora, #servicios{
     overflow: hidden;
     position:relative;
@@ -300,65 +363,50 @@ h5{
     right: 50%;
 }
 
-#whatsapp{
-    display: flex;
+.bajada{
+    width:80%;
+    margin:1.5rem auto;
+    display:flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    column-gap:1rem;
-    position:fixed;
-    bottom:1rem;
-    left: -7rem;
-    z-index:10;
-    padding:0.5rem;
-    border-radius: 0 25px 25px 0;
-    transition: left 0.5s linear;
-    -o-transition: left 0.5s linear;
-    -webkit-transition: left 0.5s linear;
-    -moz-transition: left 0.5s linear;
-    background:rgba(0,179,44,0.5);
-    cursor: pointer;
 }
 
-#hablemos{
-    text-align: center;
-    width:6rem;
-}
-
-#logo-whatsapp{
-    display:flex;
-    padding:0.8rem;
-    width:4rem;
-    z-index:12;
-}
-
-
-#whatsapp:hover{
-    left:0;
-    transition: left 0.5s linear;
-    -o-transition: left 0.5s linear;
-    -webkit-transition: left 0.5s linear;
-    -moz-transition: left 0.5s linear;
-}
-
-
-#logo-Whatsapp a{
-    color:white;
-    font-size:2.5rem;
-    text-align: center;
-}
-
-#hablemos a{
-    color:white;
-    font-size:1rem;
-}
-
-
+/*nosotros*/
 .fs-images{
     width:100%;
     min-height:95vh;
     position:sticky;
 }
 
+#nosotros{
+    display:flex;
+    justify-content: space-between;
+    min-height:95vh;
+    min-height:calc(var(--vh,1vh)*95);
+}
+
+.textoNosotros{
+    width:60%;
+    margin:3rem;
+    padding-top:8%;
+}
+
+#nosotros p{
+    font-family:'Fogie-Light','Work Sans', sans-serif;
+    color:#f4f4f4;
+    font-size:1rem;
+    text-align: left;
+    line-height: 2.2rem;
+    padding-top:1rem;
+}
+
+#nosotros img{
+    width:29%;
+    object-fit: cover;
+}
+
+/*contacto*/
 .contacto{
     padding-top:10rem;
     padding-bottom: 6rem;
@@ -466,85 +514,7 @@ h5{
     filter:grayscale(100%);
 }
 
-footer{
-    text-align: center;
-    bottom:0;
-    width:100%;
-    background:rgb(50,50,50);
-    display: flex;
-    padding:0;
-    margin:0;
-    min-height:5vh;
-}
-
-.footercontainer{
-    padding:0.7rem;
-    margin:auto;
-    width:95%;
-    display:flex;
-}
-
-.footercontainer p, .footercontainer a{
-    margin:0 auto;
-    color:white;
-    font-size:0.8rem;
-}
-
-.icon{
-    color:white;
-    font-size:2rem;
-}
-
-.disabled-icon{
-    color:gray;
-    font-size:2rem;
-}
-
-#nosotros{
-    display:flex;
-    justify-content: space-between;
-    min-height:95vh;
-    min-height:calc(var(--vh,1vh)*95);
-}
-
-.textoNosotros{
-    width:60%;
-    margin:3rem;
-    padding-top:8%;
-}
-
-
-#nosotros p{
-    font-family:'Fogie-Light','Work Sans', sans-serif;
-    color:#f4f4f4;
-    font-size:1rem;
-    text-align: left;
-    line-height: 2.2rem;
-    padding-top:1rem;
-}
-
-#nosotros img{
-    width:29%;
-    object-fit: cover;
-}
-   
-.scroll-down{
-    transform: translate(0, -100%);
-    transition:all 0.5s ease;    
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-}
-
-.scroll-up{
-    background:rgba(0,0,0,.7);
-    transform: none;
-    transition:all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-}
-
+/*Espacios+Producciones*/
 .grid{
     width:100%;
     display:grid;
@@ -609,6 +579,37 @@ footer{
     height:calc(var(--vh,1vh)*32.9);
 }
 
+#explora .grid{
+    padding:0;
+    column-gap:2px;
+    row-gap:2px;
+}
+
+#explora .grid .grid-elem{
+    min-height:24vh;   
+}
+
+#servicios, #home{
+    background: #181818;
+}
+
+#servicios .grid{
+    width:90%;
+    margin:0 auto;
+    column-gap:1.5vh;
+    row-gap:1.5vh;
+}
+
+#servicios .grid .grid-elem{
+    cursor:default;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border:solid 2px #333;
+    padding: 0 7%;
+}
+
+/*Ventana emergente*/
 .pop-up{
     overflow-y:scroll;
     position:fixed;
@@ -641,6 +642,7 @@ footer{
 #explora .pop-up .cuadro .carrousel img{
     height:100%;
     width:100%;
+    object-fit:cover;
 }
 
 .cuadro .texto{
@@ -672,13 +674,26 @@ footer{
     border:solid gray 1px;
 }
 
+.icon{
+    color:white;
+    font-size:2rem;
+}
+
+.disabled-icon{
+    color:#444;
+    font-size:2rem;
+}
+
 .cerrarCuadro{
-    color:gray;
     position:absolute;
     top:2%;
     right:2%;
     padding:5px;
     cursor:pointer;
+}
+
+.cerrarCuadro:hover{
+    color:#f8a52d;
 }
 
 #next, #back{
@@ -696,51 +711,38 @@ footer{
     right:2%;
 }
 
-.cerrarCuadro:hover{
-    color:white;
-}
-
-.bajada{
-    width:80%;
-    margin:1.5rem auto;
+#contenidoTrabajo{
     display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 }
 
-#explora .grid{
+#contenidoTrabajo iframe, #contenidoTrabajo img{
+    border:solid #111 5px;  
+}
+
+/*Footer*/
+footer{
+    text-align: center;
+    bottom:0;
+    width:100%;
+    background:rgb(50,50,50);
+    display: flex;
     padding:0;
-    column-gap:2px;
-    row-gap:2px;
+    margin:0;
+    min-height:5vh;
 }
 
-#explora .grid .grid-elem{
-    min-height:24vh;   
-}
-
-#servicios, #home{
-    background: #181818;
-}
-
-#servicios .grid{
-    width:90%;
-    margin:0 auto;
-    column-gap:1.5vh;
-    row-gap:1.5vh;
-}
-
-#servicios .grid .grid-elem{
-    cursor:default;
+.footercontainer{
+    padding:0.7rem;
+    margin:auto;
+    width:95%;
     display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border:solid 2px #333;
-    padding: 0 7%;
 }
 
-#servicios .grid .grid-elem h5{
-    padding-top:10%;
+.footercontainer p, .footercontainer a{
+    margin:0 auto;
+    color:white;
+    font-size:0.8rem;
 }
 
 @media screen and (max-width:960px){
@@ -790,14 +792,7 @@ footer{
     }
 
     #contenidoTrabajo{
-        display:flex;
-        justify-content: center;
-        height:100vh;
-    }
-    
-    #contenidoTrabajo iframe, #contenidoTrabajo img{
-        border:solid #111 5px;  
-        object-fit: fill;
+    height:100vh;
     }
 
     #whatsapp:hover{
@@ -916,17 +911,13 @@ footer{
         font-size:1.2rem;
     }
 
-    .contacto h4{
-        font-size:1.5rem;  
+    .contacto h4, .icon, .disabled-icon{
+        font-size:1.4rem;
     }
-
+    
     #menu>ul{
         align-items:center;
         padding:3rem;
-    }
-
-    .icon{
-        font-size:1.5rem;
     }
 
     #espacios .grid .grid-elem, #producciones .grid .grid-elem {
