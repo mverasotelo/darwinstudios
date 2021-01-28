@@ -121,11 +121,6 @@ header a{
     display:none;
 }
 
-.iconos{
-    display:flex;
-    justify-content:space-between;
-}
-
 #menu{
     overflow: hidden;
     position:fixed;
@@ -500,6 +495,11 @@ footer{
     font-size:2rem;
 }
 
+.disabled-icon{
+    color:gray;
+    font-size:2rem;
+}
+
 #nosotros{
     display:flex;
     justify-content: space-between;
@@ -623,15 +623,13 @@ footer{
 
 .cuadro{
     width:80%;
-    height:80%;
+    height:85%;
     overflow: hidden;
-    color:gray;
     position:fixed;
     left:calc(10%);
     top:calc(12%);
     background:#111;
     display:flex;
-    align-items: center;
     border: solid 1px gray;
 }
 
@@ -643,21 +641,35 @@ footer{
 #explora .pop-up .cuadro .carrousel img{
     height:100%;
     width:100%;
-    object-fit:cover;
 }
 
 .cuadro .texto{
     padding:1rem;
-    margin:0 auto;
+    line-height: 130%;
     width:50%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.cuadro p{
+.cuadro p {
     font-family:'Fogie-Light','Work Sans', sans-serif;
     color:#aaa;
-    font-size:1.3rem;
-    text-align: center;
+    font-size:1rem;
     margin-top:0.5rem;
+    text-align: center;
+}
+
+.plano{
+    padding:1rem;
+}
+
+.texto a{
+    color:#f8a52d;
+    padding:1rem;
+    border:solid gray 1px;
 }
 
 .cerrarCuadro{
@@ -667,17 +679,6 @@ footer{
     right:2%;
     padding:5px;
     cursor:pointer;
-}
-
-#contenidoTrabajo{
-    display:flex;
-    justify-content: center;
-    height:100%;
-    width:100%;
-}
-
-#contenidoTrabajo iframe, #contenidoTrabajo img{
-    height:100%;
 }
 
 #next, #back{
@@ -745,13 +746,16 @@ footer{
 @media screen and (max-width:960px){
     .grid{
         grid-template-columns: repeat(2, 1fr);
-        column-gap:4px;
-        row-gap:4px;
+        column-gap:2px;
+        row-gap:2px;
         padding:0 4px;
     }
 
     #producciones .grid{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);        
+        column-gap:2px;
+        row-gap:2px;
+        padding:0 4px;
     }
 
     
@@ -765,6 +769,7 @@ footer{
 
     .cuadro{
         flex-direction: column-reverse;
+        align-items: center;
         width:100%;
         height:auto;
         left:0;
@@ -782,6 +787,17 @@ footer{
         height:60vh;
         width: 100%;
         border:solid #111 5px;  
+    }
+
+    #contenidoTrabajo{
+        display:flex;
+        justify-content: center;
+        height:100vh;
+    }
+    
+    #contenidoTrabajo iframe, #contenidoTrabajo img{
+        border:solid #111 5px;  
+        object-fit: fill;
     }
 
     #whatsapp:hover{
@@ -845,7 +861,7 @@ footer{
     }
     
     #servicios{
-        padding:15% 0;
+        padding:20% 0;
     }
 
     .ver-mas{
@@ -886,17 +902,13 @@ footer{
         border-bottom: none;
     }
 
-    h1{
-        font-size:2rem;
-    }
-
-    h2{
-        font-size:2rem;
+    h1,h2{
+        font-size:1.8rem;
         letter-spacing: 0.5rem;
     }
 
     h3{
-        font-size:0.9rem;
+        font-size:0.8rem;
         line-height: 1.4rem;
     }
 

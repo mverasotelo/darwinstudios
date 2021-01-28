@@ -6,7 +6,7 @@
         <h1>Producciones</h1>            
         <div class="grid">
             <div @click="infoTrabajo(0)" class="grid-elem" style="background-image:url('{% static 'img/Converse.jpg'%}')"><div class="filter"></div><div>Converse</div></div>
-            <div @click="infoTrabajo(1)" class="grid-elem" style="background-image:url('{% static 'img/LaSolitaRemix.jpg'%}')"><div class="filter"></div><div>Esta noche🌙<br>FMK, Emilia Mernes y Estani</div></div>
+            <div @click="infoTrabajo(1)" class="grid-elem" style="background-image:url('{% static 'img/EstaNoche4.jpg'%}')"><div class="filter"></div><div>Esta noche🌙<br>FMK, Emilia Mernes y Estani</div></div>
             <div @click="infoTrabajo(2)" class="grid-elem" style="background-image:url('{% static 'img/YouTube.jpg'%}')"><div class="filter"></div><div>You Tube</div></div>  
             <div @click="infoTrabajo(3)" class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>Solita RMX<br>Mechi Pieretti, Cazzu, La Joaqui</div></div>
             <div @click="infoTrabajo(4)" class="grid-elem" style="background-image:url('{% static 'img/Agapornis.jpg'%}')"><div class="filter"></div><div>Perdiste por gil<br>Agapornis</div></div>
@@ -19,8 +19,8 @@
                 <div class="cuadro">
                     <div id="contenidoTrabajo" v-html="contenidoTrabajo"></div>
                     <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
-                    <div id="next" class="icon fas fa-angle-right" @click="pasarFoto()" tabindex="0"></div>
-                    <div id="back" class="icon fas fa-angle-left" @click="retrocederFoto()" tabindex="0"></div>
+                    <div id="next" class="fas fa-angle-right" :class="next" @click="pasarFoto()" tabindex="0"></div>
+                    <div id="back" class="fas fa-angle-left" :class="back" @click="retrocederFoto()" tabindex="0"></div>
                 </div>
             </div>
     </section>

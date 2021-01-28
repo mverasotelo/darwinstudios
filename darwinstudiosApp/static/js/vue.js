@@ -1,20 +1,3 @@
-/*import {VueHammer} from 'vue2-hammer';
-Vue.use(VueHammer);
-
-
-Vue.directive("swipeleft", {
-    bind: function(el, binding) {
-      if (typeof binding.value === "function"){
-        var mc = new Hammer(el);
-        mc.add(new Hammer.Swipe({ 
-        direction: Hammer.DIRECTION_LEFT 
-        }));
-        mc.on("swipeleft", binding.value);
-      }
-    }
-});
-*/
-
 //cargar pagina
 window.onload= function(){
     new Vue({
@@ -32,20 +15,6 @@ new Vue({
         menuClass:"cerrarMenu",
     },
     methods:{
-/*cambioHeader: function(){
-            if (this.currentScroll == 0){
-                this.headerClass="header";
-                //header.style="transition:ease 0.5s";
-                return;
-            }
-            if (this.currentScroll > this.lastScroll) {
-                this.headerClass="header scroll-down";
-            }else if (this.currentScroll < this.lastScroll){
-                this.headerClass="header scroll-up";
-                //this.headerClass="transition:ease 0.5s";
-            }
-            this.lastScroll = this.currentScroll;
-        },*/
         desplegarMenu: function(){
             if(this.iconoMenu=="icon fas fa-bars"){
                 this.iconoMenu="icon fas fa-times";
@@ -77,11 +46,12 @@ new Vue({
         caracteristica:"",
         titulo:"",
         popUp:"",
-        espacio:"",
         imagenes:[["/static/img/Niceto1.jpg"],["/static/img/Cyberpunk.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/Exteriores2.jpg"],["/static/img/Terraza2.jpg"]],
         tempFoto:0,
         tempEspacio:"",
-        imagenEspacio:""
+        imagenEspacio:"",
+        plano:"",
+        planoHref:""
         },
     methods:{
         infoEspacio: function(n){
@@ -91,10 +61,12 @@ new Vue({
             this.caracteristica=this.caracteristicas[n];  
             this.imagenEspacio=this.imagenes[n][0];
             document.body.style.overflow='hidden';
+            this.agregarMapa();
         },
         cerrarCuadro: function(){
             this.popUp="";
             document.body.style.overflow ='auto';
+            this.plano="";
         },
         pasarFoto: function(){
             if(this.tempFoto<(this.imagenes[this.tempEspacio].length)-1){
@@ -113,8 +85,18 @@ new Vue({
                 this.tempFoto=(this.imagenes[this.tempEspacio].length)-1;
             }
             this.imagenEspacio=this.imagenes[this.tempEspacio][this.tempFoto];
-        }
-    }
+        },
+        agregarMapa: function(){
+            if(this.tempEspacio==0||this.tempEspacio==1||this.tempEspacio==3){
+                this.plano="plano";
+                this.planoHref="/static/img/DarwinStudios_Plano.pdf";
+            }
+            if(this.tempEspacio==2){
+                this.plano="plano";
+                this.planoHref="/static/img/DarwinStudios_Fabrica_Plano.pdf";
+            }
+        },
+    },
 });
 
 new Vue({
@@ -124,41 +106,67 @@ new Vue({
         producciones:["Converse", "Esta noche🌙","You Tube","Solita RMX","Perdiste por gil","Mutis","Buena Vibra y 1+1","Comicon","Cyberpunk","Plata Quemada"],
         videos:["https://www.youtube.com/embed/nThgp6a_OZM","https://www.youtube.com/embed/Z-TkiF4xeJ0","","https://www.youtube.com/embed/RCnursIWCmY","https://www.youtube.com/embed/Z9IMV4fFsoI","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/0MGCMyVVpHc","","https://www.youtube.com/embed/SUschdjn0mc"],   
         videoUrl:"",
-        imagenes:[["/static/img/Converse1.jpg","/static/img/Converse2.jpg","/static/img/Converse3.jpg","/static/img/Converse4.jpg"],["/static/img/Converse2.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg","/static/img/Dstudio3.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/Exteriores2.jpg"],["/static/img/Terraza2.jpg"]],
+        imagenes:[["/static/img/Converse1.jpg","/static/img/Converse2.jpg","/static/img/Converse3.jpg","/static/img/Converse4.jpg"],
+        ["/static/img/EstaNoche1.jpg","/static/img/EstaNoche2.jpg","/static/img/EstaNoche3.jpg","/static/img/EstaNoche4.jpg","/static/img/EstaNoche5.jpg"],
+        ["/static/img/Youtube.jpg", "/static/img/Youtube2.jpg", "/static/img/Youtube3.jpg", "/static/img/Dstudio1.jpg"],
+        ["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],
+        ["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg","/static/img/Dstudio3.jpg"],
+        ["/static/img/1+1studio2.jpg"],
+        ["/static/img/Exteriores2.jpg"],
+        ["/static/img/Terraza2.jpg"]],
         imagenTrabajo:"",
         tempFoto:0,
         tempTrabajo:0,
-        contenidoTrabajo:""
+        contenidoTrabajo:"",
+        next:"icon",
+        back:"icon"
+
     },
     methods:{
         infoTrabajo: function(n){
-            this.tempEspacio=n;
+            this.tempTrabajo=n;
+            this.back="disabled-icon";
+            this.next="icon";
             this.popUp="popUp";
             this.videoUrl=this.videos[n];
             this.imagenTrabajo=this.imagenes[n][0];
             this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[n]+"' title='"+this.producciones[n]+"'>";
+            document.body.style.overflow='hidden';
         },
         cerrarCuadro: function(){
             this.popUp="";
             this.videoUrl="";
-        },
+            this.tempFoto=0;
+            document.body.style.overflow='auto';
+            },
         pasarFoto: function(){
             if(this.tempFoto<(this.imagenes[this.tempTrabajo].length)-1){
                 this.tempFoto=this.tempFoto+1;
+                this.back="icon";
+                this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+                this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[this.tempTrabajo]+"' title='"+this.producciones[this.tempTrabajo]+"'>";
             }
-            else{
-                this.tempFoto=0;
+            if(this.tempFoto==(this.imagenes[this.tempTrabajo].length)-1){
+                if(this.videos[this.tempTrabajo].length!=0){
+                    this.cargarVideo();
+                }
+                this.next="disabled-icon";
             }
-            this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
         },
         retrocederFoto: function(){
             if(this.tempFoto>0){
                 this.tempFoto=this.tempFoto-1;
+                this.next="icon";
+                this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+                this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[this.tempTrabajo]+"' title='"+this.producciones[this.tempTrabajo]+"'>";
             }
-            else{
-                this.tempFoto=(this.imagenes[this.tempTrabajo].length)-1;
+            if(this.tempFoto==0){          
+                this.back="disabled-icon";
+                this.next="icon";
             }
-            this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+        },
+        cargarVideo: function(){
+            this.contenidoTrabajo="<iframe src='"+this.videoUrl+"' frameborder='0' allow='accelerometer' controls='0'; autoplay allowfullscreen></iframe>";
         }
     }
 });
