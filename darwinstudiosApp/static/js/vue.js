@@ -46,7 +46,7 @@ new Vue({
         caracteristica:"",
         titulo:"",
         popUp:"",
-        imagenes:[["/static/img/Niceto1.jpg"],["/static/img/Cyberpunk.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/Exteriores2.jpg"],["/static/img/Terraza2.jpg"]],
+        imagenes:[["/static/img/Niceto1.jpg","/static/img/Niceto2.jpg"],["/static/img/Cyberpunk.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/darwin_studios_nosotros.jpg"],["/static/img/Terraza2.jpg"]],
         tempFoto:0,
         tempEspacio:"",
         imagenEspacio:"",
@@ -61,7 +61,7 @@ new Vue({
             this.caracteristica=this.caracteristicas[n];  
             this.imagenEspacio=this.imagenes[n][0];
             document.body.style.overflow='hidden';
-            this.agregarMapa();
+            this.agregarPlano();
         },
         cerrarCuadro: function(){
             this.popUp="";
@@ -86,7 +86,7 @@ new Vue({
             }
             this.imagenEspacio=this.imagenes[this.tempEspacio][this.tempFoto];
         },
-        agregarMapa: function(){
+        agregarPlano: function(){
             if(this.tempEspacio==0||this.tempEspacio==1||this.tempEspacio==3){
                 this.plano="plano";
                 this.planoHref="/static/img/DarwinStudios_Plano.pdf";
