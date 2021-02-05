@@ -2,7 +2,6 @@ const header = document.querySelector("header");
 const menu = document.querySelector("#menu");
 const iconoMenu = document.querySelector("#menuIcon");
 
-
 //Alto elementos
 let vh=window.innerHeight*0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);  
@@ -30,7 +29,7 @@ function cambioHeader(){
         header.classList="header scroll-up";
         header.style="transition:ease 0.5s";
     }
-    lastScroll = currentScroll;
+    lastScroll=currentScroll;
 }
 /*
 var mc = new Hammer.Manager(menu);

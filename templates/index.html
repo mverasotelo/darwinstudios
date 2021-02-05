@@ -15,37 +15,36 @@
                 <a id="next" class="icon fas fa-angle-right"></a>
         </div>-->
     </section>
-    <section id="explora">
+    <section id="explora" class="explora">
         <div class="bajada">    
             <h2>Explorá</h2>
             <h3>Darwin Studios es una fábrica antigua de más de 7.000 m² reconvertida en complejo de locaciones, salón de eventos, espacio de oficinas y estudios privados en pleno Distrito Audiovisual de Palermo.</h3>
         </div>
         <div class="grid">
             <div @click="infoEspacio(0)" class="grid-elem" style="background-image:url('{% static 'img/Niceto1.jpg'%}')"><div class="filter"></div><div>NAVE NICETO</div></div>
-            <div @click="infoEspacio(1)" class="grid-elem" style="background-image:url('{% static 'img/Darwin.png'%}')"><div class="filter"></div><div>NAVE DARWIN</div></div>
-            <div @click="infoEspacio(2)" class="grid-elem" style="background-image:url('{% static 'img/Fabrica.png'%}')"><div class="filter"></div><div>NAVE FÁBRICA</div></div>  
-            <div @click="infoEspacio(3)" class="grid-elem" style="background-image:url('{% static 'img/Hall.jpg'%}')"><div class="filter"></div><div>HALL</div></div>
-            <div @click="infoEspacio(4)" class="grid-elem" style="background-image:url('{% static 'img/StudioD.jpg'%}')"><div class="filter"></div><div>STUDIO D</div></div>
-            <div @click="infoEspacio(5)" class="grid-elem" style="background-image:url('{% static 'img/Studio1+1.png'%}')"><div class="filter"></div><div>1+1 STUDIO</div></div>                
-            <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>
-            <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/Terraza.png'%}')"><div class="filter"></div><div>TERRAZA Y DEPÓSITOS</div></div>
+            <div @click="infoEspacio(1)" class="grid-elem" style="background-image:url('{% static 'img/Darwin.jpg'%}')"><div class="filter"></div><div>NAVE DARWIN</div></div>
+            <div @click="infoEspacio(2)" class="grid-elem" style="background-image:url('{% static 'img/Hall.jpg'%}')"><div class="filter"></div><div>HALL</div></div>  
+            <div @click="infoEspacio(3)" class="grid-elem" style="background-image:url('{% static 'img/Fabrica.png'%}')"><div class="filter"></div><div>NAVE D</div></div>
+            <div @click="infoEspacio(4)" class="grid-elem" style="background-image:url('{% static 'img/Streaming2.jpeg'%}')"><div class="filter"></div><div>ESTUDIO STREAMING</div></div>
+            <div @click="infoEspacio(5)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>                
+            <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Studio1+1.png'%}')"><div class="filter"></div><div>ESPACIO 1+1</div></div>
+            <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/Converse1.jpg'%}')"><div class="filter"></div><div>LADO B</div></div>
             <div class="pop-up" v-show="popUp">
                 <div class="cuadro" scrolling="yes" v-on:swipeleft="pasarFoto">
                     <div class="carrousel">
                         <img v-bind:src="imagenEspacio" v-bind:alt="titulo" v-bind:title="titulo">
-                        <div id="next" class="icon fas fa-angle-right" @click="pasarFoto()" tabindex="0"></div>
-                        <div id="back" class="icon fas fa-angle-left" @click="retrocederFoto()" tabindex="0"></div>
+                        <div id="next" :class="next" @click="pasarFoto()" tabindex="0"></div>
+                        <div id="back" :class="back" @click="retrocederFoto()" tabindex="0"></div>
                     </div>
                     <div class="texto">
                         <h4>{[titulo]}</h4>
                         <br>
                         <p v-for="(val) in caracteristica">{[val]}</p>
-                        <p v-show="plano" class="plano"><a :href="planoHref" :download="planoHref">Descargar Plano</a></p>
+                        <p v-show="plano" class="plano"><a :href="planoHref" v-html="texto"></a></p>
                     </div>
                         <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
                 </div>
             </div>
-            <a href="#servicios" class="ver-mas"><div class="fas fa-long-arrow-alt-down"></div></a>
         </div>
     </section>
     <section id="servicios">
@@ -55,7 +54,7 @@
         <div class="grid">
             <article class="grid-elem"><h4>Locaciones</h4><h5>Alquiler por jornada para filmaciones, videoclips, publicidades y producciones de fotografía.</h5></article>
             <article class="grid-elem"><h4>Venue</h4><h5>Multiespacio versátil, adaptable  a cualquier tipo de evento y formato: presencial, híbrido o virtual.</h5></article>
-            <article class="grid-elem"><h4>Streaming</h4><h5>Operación de cámaras, luces y edición para transmisión por streaming en vivo o diferido.</h5></article>
+            <article class="grid-elem"><h4>Streaming</h4><h5>Estudio equipado con cámaras, luces, música y pantalla LED, para eventos virtuales.</h5></article>
             <article class="grid-elem"><h4>In-house</h4><h5>Alquiler de oficinas y estudios privados, mesas compartidas, salas de reunión y depósitos. </h5></article>
         </div>                
     </section>

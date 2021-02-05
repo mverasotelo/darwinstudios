@@ -159,10 +159,6 @@ a{
     -o-animation:menuAbrir 0.5s ease;
 }
 
-#menu hr{
-    display:none;
-}
-
 .abrirMenu{
     display:block;
 }
@@ -297,7 +293,6 @@ h5{
 /*home*/
 #home, #explora, #servicios{
     overflow: hidden;
-    position:relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -308,13 +303,10 @@ h5{
     height:calc(var(--vh,1vh)*100);
 }
 
-#explora{
+.explora, #servicios{
     padding:21vh 0 21vh 0;
 }
 
-#servicios{
-    padding:24vh 0 24vh 0;
-}
 
 #home video{
     width:100%;
@@ -355,10 +347,6 @@ h5{
 
 .ver-mas .fas{
     color:#f8a52d;
-}
-
-#explora .ver-mas{
-    right: 50%;
 }
 
 .bajada{
@@ -496,9 +484,8 @@ h5{
 }
 
 .formulario form div{
-    font-size:1.2rem;
+    font-size:1rem;
     margin-top:2rem;
-    background:rgba(0,179,44,0.5);
     margin:0 auto;
 }
 
@@ -678,8 +665,7 @@ h5{
 }
 
 .disabled-icon{
-    color:#444;
-    font-size:2rem;
+    display:hidden;
 }
 
 .cerrarCuadro{
@@ -694,18 +680,18 @@ h5{
     color:#f8a52d;
 }
 
-#next, #back{
+.next, .back{
     position:absolute;
     padding:5px;
     cursor:pointer;    
     top:calc(50% - 15px);
 }
 
-#back{
+.back{
     left:2%;
 }
 
-#next{
+.next{
     right:2%;
 }
 
@@ -743,6 +729,10 @@ footer{
     margin:0 auto;
     color:white;
     font-size:0.8rem;
+}
+
+#firma{
+    display:none;
 }
 
 @media screen and (max-width:960px){
@@ -850,13 +840,12 @@ footer{
         width:90%;
     }
 
-
     #explora{
-        padding:10% 0 15vh;
+        padding:20% 0;
     }
     
     #servicios{
-        padding:20% 0;
+        padding:10% 0;
     }
 
     .ver-mas{
@@ -890,11 +879,18 @@ footer{
         padding:1rem;
         padding-top:1.5rem;
         font-size:1.5rem;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid gray;
+        ;
+        ;
     }
 
     #menu>ul>li:last-child{
         border-bottom: none;
+    }
+
+    #menu>ul{
+        align-items:center;
+        padding:3rem;
     }
 
     h1,h2{
@@ -912,12 +908,7 @@ footer{
     }
 
     .contacto h4, .icon, .disabled-icon{
-        font-size:1.4rem;
-    }
-    
-    #menu>ul{
-        align-items:center;
-        padding:3rem;
+        font-size:1.5rem;
     }
 
     #espacios .grid .grid-elem, #producciones .grid .grid-elem {

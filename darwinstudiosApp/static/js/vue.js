@@ -33,25 +33,27 @@ new Vue({
     el:"#explora",
     delimiters:['{[',']}'],
     data:{
-        espacios:["NAVE NICETO", "NAVE DARWIN", "NAVE FÁBRICA", "HALL", "D-STUDIO", "1+1 STUDIO", "EXTERIORES", "TERRAZA Y DEPÓSITOS"],
-        caracteristicas:[["Dimensiones: 28,65 m x 16,9 m","Superficie: 484 m²","Altura: 9 m, hasta la pasarela técnica","Entrada de vehiculo: 4,68 m x 4,2 m","Espacio sin columnas","Tablero Trifásico con 1 toma A63 y 2 tomas A32, con disyuntores independientes","Potencia total: A127","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Dimensiones: 41 m x 13 m","Superficie: 533 m²","Altura: 4,2 m","Entrada de vehículo: 4 m x 3,7 m","Espacio con columnas","Tablero Trifásico con 1 toma A63 y 2 tomas A32, con disyuntores independientes","Potencia total: A127","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Dimensiones: 33.42 m x 13,79 m","Superficie: 460 m²","Altura: 4,2 m","Planta libre (mesas movibles): 234 m² (24 m x 9,75 m)","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Dimensiones: 15,61 m x 14,09 m","Superficie: 220 m²","Altura: 4,2 m","Espacio con columnas","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Superficie: 40 m²","Altura: 4,2 m","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Superficie: 115 m²","Altura: 4,2 m","Camarines compartidos y privados","Baños","Salas de producción y reuniones","Zona comedor y descanso","Espacio para catering","Estacionamiento"],
-        ["Dimensiones: 43 m x 25 m","Superficie: 1075 m²"],
-        ["Dimensiones: 17,53 m x 5,50 m","Superficie: 96,4 m²","Más de 1000 m² de depósitos y áreas de guardado"],
+        espacios:["NAVE NICETO", "NAVE DARWIN", "HALL", "NAVE D", "ESTUDIO STREAMING","EXTERIORES","ESPACIO 1+1","LADO B"],
+        caracteristicas:[["Dimensiones: 28,65 m x 16,9 m","Superficie: 484 m²","Altura: 9 m, hasta la pasarela técnica","Entrada de vehiculo: 4,68 m x 4,2 m","Espacio sin columnas","Tablero Trifásico con 1 toma A63 y 2 tomas A32, con disyuntores independientes","Potencia total: A127. Consultar por más capacidad","2 camarines privados","1 sala de vestuario, maquillaje y pelo","Baños","Zona comedor y descanso, con living y mesas","Espacio para catering","Baños","Estacionamiento"],
+        ["Dimensiones: 41 m x 13 m","Superficie: 533 m²","Altura: 4,2 m","Entrada de vehículo: 4 m x 3,7 m","Espacio con columnas","Tablero Trifásico con 1 toma A63 y 2 tomas A32, con disyuntores independientes","Potencia total: A127. Consultar por más capacidad","2 camarines privados","1 sala de vestuario, maquillaje y pelo","Zona comedor y descanso, con livings y mesas","Espacio para catering","Baños","Estacionamiento"],
+        ["Dimensiones: 15,61 m x 14,09 m","Superficie: 220 m²","Altura: 4,2 m","Espacio con columnas","Zona comedor y descanso, con livings y mesas","1 camarín privado","1 Sala de vestuario, maquillaje y pelo","Espacio para catering","Baños","Estacionamiento"],
+        ["Dimensiones: 33.42 m x 13,79 m","Superficie: 460 m²","Altura: 4,2 m","Planta libre (mesas movibles): 234 m² (24 m x 9,75 m)","Camarines compartidos y privados","Baños","Sala de vestuario, maquillaje y pelo","Zona comedor y descanso, con mesas y livings","Espacio para catering","Estacionamiento"],
+        ["Propuesta integral de estudio y técnica, a cargo de Darwin Studios, Repila Corporate y Streamcenter BA","Venue: Nave Niceto","Incluye estacionamiento, exteriores y Hall","Iluminación","Sonido","Video y pantalla LED","Streaming"],
+        ["Dimensiones: 43m x 25 m","Superficie: 1075 m²"],
+        ["Un espacio único y en continua transformación, compartido por creadores y artistas","Ideal para acciones con formato Tiny Desk"],
         ],
         caracteristica:"",
         titulo:"",
         popUp:"",
-        imagenes:[["/static/img/Niceto1.jpg","/static/img/Niceto2.jpg"],["/static/img/Cyberpunk.jpg"],["/static/img/NaveFabrica.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/1+1studio2.jpg"],["/static/img/darwin_studios_nosotros.jpg"],["/static/img/Terraza2.jpg"]],
+        imagenes:[["/static/img/Niceto1.jpg","/static/img/Niceto2.jpg"],["/static/img/Darwin.jpg"],["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg"],["/static/img/Streaming2.jpeg","/static/img/Streaming3.jpeg","/static/img/Streaming.jpg"],["/static/img/darwin_studios_nosotros.jpg"],["/static/img/Espacio1+1.jpg","/static/img/Espacio1+1.2.jpg"],["/static/img/LadoB1.jpg","/static/img/Converse1.jpg","/static/img/Converse2.jpg","/static/img/Converse3.jpg","/static/img/Converse4.jpg"]],
         tempFoto:0,
         tempEspacio:"",
         imagenEspacio:"",
         plano:"",
-        planoHref:""
+        planoHref:"",
+        texto:"",
+        next:"next icon fas fa-angle-right",
+        back:"back icon fas fa-angle-left",
         },
     methods:{
         infoEspacio: function(n){
@@ -62,6 +64,13 @@ new Vue({
             this.imagenEspacio=this.imagenes[n][0];
             document.body.style.overflow='hidden';
             this.agregarPlano();
+            if(this.imagenes[n].length<2){
+                this.next="disabled-icon";
+                this.back="disabled-icon";
+            }else{
+                this.next="next icon fas fa-angle-right";
+                this.back="back icon fas fa-angle-left";
+            }
         },
         cerrarCuadro: function(){
             this.popUp="";
@@ -87,13 +96,20 @@ new Vue({
             this.imagenEspacio=this.imagenes[this.tempEspacio][this.tempFoto];
         },
         agregarPlano: function(){
-            if(this.tempEspacio==0||this.tempEspacio==1||this.tempEspacio==3){
+            if(this.tempEspacio==0||this.tempEspacio==1||this.tempEspacio==2){
+                this.texto="Ver Plano"
                 this.plano="plano";
                 this.planoHref="/static/img/DarwinStudios_Plano.pdf";
             }
-            if(this.tempEspacio==2){
+            if(this.tempEspacio==3){
                 this.plano="plano";
+                this.texto="Ver Plano"
                 this.planoHref="/static/img/DarwinStudios_Fabrica_Plano.pdf";
+            }
+            if(this.tempEspacio==4){
+                this.plano="plano";
+                this.texto="Ver Propuesta"
+                this.planoHref="/static/img/DarwinStudios_Propuesta_Streaming.pdf";
             }
         },
     },
