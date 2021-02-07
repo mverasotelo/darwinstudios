@@ -115,13 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'America/Buenos_Aires' 
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -142,11 +138,19 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT='587'
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER="merverasotelo@gmail.com"
-EMAIL_HOST_PASSWORD="15695733"
+EMAIL_HOST='c2101017.ferozo.com'
+EMAIL_PORT='465'
+EMAIL_HOST_USER="info@darwinstudios.com.ar"
+EMAIL_HOST_PASSWORD="Niceto2021"
+DEFAULT_FROM_EMAIL = 'Darwin Studios <info@darwinstudios.com.ar>'
+EMAIL_USE_SSL=True
+
+ADMINS = (
+    ('Darwin Studios', 'info@darwinstudios.com.ar'),
+)
+
+MANAGERS = ADMINS
+
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)

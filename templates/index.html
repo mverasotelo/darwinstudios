@@ -33,8 +33,8 @@
                 <div class="cuadro" scrolling="yes" v-on:swipeleft="pasarFoto">
                     <div class="carrousel">
                         <img v-bind:src="imagenEspacio" v-bind:alt="titulo" v-bind:title="titulo">
-                        <div id="next" :class="next" @click="pasarFoto()" tabindex="0"></div>
-                        <div id="back" :class="back" @click="retrocederFoto()" tabindex="0"></div>
+                        <div :class="next" @click="pasarFoto()" tabindex="0"></div>
+                        <div :class="back" @click="retrocederFoto()" tabindex="0"></div>
                     </div>
                     <div class="texto">
                         <h4>{[titulo]}</h4>

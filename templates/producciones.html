@@ -3,23 +3,24 @@
 {% block title %}Producciones | Darwin Studios{% endblock %}
 {% block main %}
     <section id="producciones">
-        <h1>Producciones</h1>            
+        <h1>PRODUCCIONES</h1>            
         <div class="grid">
-            <div @click="infoTrabajo(1)" class="grid-elem" style="background-image:url('{% static 'img/EstaNoche4.jpg'%}')"><div class="filter"></div><div>Esta noche🌙<br>FMK, Emilia Mernes y Estani</div></div>
-            <div @click="infoTrabajo(2)" class="grid-elem" style="background-image:url('{% static 'img/YouTube.jpg'%}')"><div class="filter"></div><div>You Tube</div></div>  
-            <div @click="infoTrabajo(3)" class="grid-elem" style="background-image:url('{% static 'img/NaveNiceto.jpg'%}')"><div class="filter"></div><div>Solita RMX<br>Mechi Pieretti, Cazzu, La Joaqui</div></div>
-            <div @click="infoTrabajo(4)" class="grid-elem" style="background-image:url('{% static 'img/Agapornis.jpg'%}')"><div class="filter"></div><div>Perdiste por gil<br>Agapornis</div></div>
-            <div @click="infoTrabajo(5)" class="grid-elem" style="background-image:url('{% static 'img/1mas1studio.jpg'%}')"><div class="filter"></div><div>BBVA - Mutis<br>(Evento por streaming)</div></div>                
-            <div @click="infoTrabajo(6)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>Sesiones<br>Buena Vibra y 1+1</div></div>
-            <div @click="infoTrabajo(7)" class="grid-elem" style="background-image:url('{% static 'img/Comicon.jpg'%}')"><div class="filter"></div><div>Comicon<br>Sergio Instanto</div></div>
-            <div @click="infoTrabajo(8)" class="grid-elem" style="background-image:url('{% static 'img/Cyberpunk.jpg'%}')"><div class="filter"></div><div>CyberPunk<br>Sergio Instanto</div></div>
+            <div @click="infoTrabajo(0)" class="grid-elem" style="background-image:url('{% static 'img/EstaNoche1.jpg'%}')"><div class="filter"></div><div>Esta noche🌙<br>FMK, Emilia Mernes y Estani</div></div>
+            <div @click="infoTrabajo(1)" class="grid-elem" style="background-image:url('{% static 'img/SolitaRMX.jpg'%}')"><div class="filter"></div><div>Solita RMX<br>Mechi Pieretti, Cazzu, La Joaqui</div></div>  
+            <div @click="infoTrabajo(2)" class="grid-elem" style="background-image:url('{% static 'img/JAEMutis.png'%}')"><div class="filter"></div><div>JAE 2020<br>BBVA y Mutis Agencia</div></div>
+            <div @click="infoTrabajo(3)" class="grid-elem" style="background-image:url('{% static 'img/Agapornis.jpg'%}')"><div class="filter"></div><div>Perdiste por gil<br>Agapornis</div></div>
+            <div @click="infoTrabajo(4)" class="grid-elem" style="background-image:url('{% static 'img/Youtube2.jpg'%}')"><div class="filter"></div><div>You Tube</div></div>                
+            <div @click="infoTrabajo(5)" class="grid-elem" style="background-image:url('{% static 'img/Converse3.jpg'%}')"><div class="filter"></div><div>Converse</div></div>
+            <div @click="infoTrabajo(6)" class="grid-elem" style="background-image:url('{% static 'img/Comicon.jpg'%}')"><div class="filter"></div><div>Comicon</div></div>
+            <div @click="infoTrabajo(7)" class="grid-elem" style="background-image:url('{% static 'img/Cyberpunk.jpg'%}')"><div class="filter"></div><div>CyberPunk2077</div></div>
+            <div @click="infoTrabajo(8)" class="grid-elem" style="background-image:url('{% static 'img/BuenaVibra.png'%}')"><div class="filter"></div><div>Sesiones Buena Vibra y 1+1</div></div>
             <div @click="infoTrabajo(9)" class="grid-elem" style="background-image:url('{% static 'img/PlataQuemada.jpg'%}')"><div class="filter"></div><div>Plata Quemada</div></div>
             <div class="pop-up" v-show="popUp">
                 <div class="cuadro">
                     <div id="contenidoTrabajo" v-html="contenidoTrabajo"></div>
                     <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
-                    <div id="next" class="fas fa-angle-right" :class="next" @click="pasarFoto()" tabindex="0"></div>
-                    <div id="back" class="fas fa-angle-left" :class="back" @click="retrocederFoto()" tabindex="0"></div>
+                    <div :class="next" @click="pasarFoto()" tabindex="0"></div>
+                    <div :class="back" @click="retrocederFoto()" tabindex="0"></div>
                 </div>
             </div>
     </section>

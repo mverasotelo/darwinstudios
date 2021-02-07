@@ -195,7 +195,7 @@ h1{
     text-align:center;
     color:#eee;
     letter-spacing: 1rem;
-    font-size:3rem;
+    font-size:2rem;
     border-bottom:solid 1px #f8a52d;
 
 }
@@ -304,7 +304,7 @@ h5{
 }
 
 .explora, #servicios{
-    padding:21vh 0 21vh 0;
+    padding:15vh 0;
 }
 
 
@@ -455,7 +455,7 @@ h5{
     border:none;
     resize:vertical;
     outline:none;
-    background: #f4f4f4
+    background: #f4f4f4;
 }
 
 .formulario form input[type="submit"]{
@@ -484,6 +484,7 @@ h5{
 }
 
 .formulario form div{
+    text-align: center;
     font-size:1rem;
     margin-top:2rem;
     margin:0 auto;
@@ -543,7 +544,7 @@ h5{
     text-align: center;
     color:white;
     letter-spacing: 0.2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     z-index: 3;
 }
 
@@ -555,13 +556,13 @@ h5{
     -webkit-transition: all 0.5s ease-in-out;
 }
 
-#espacios, #producciones{
+#producciones{
     margin-top:7.4rem;
 }
 
-#espacios .grid .grid-elem, #producciones .grid .grid-elem {
-    height:32.9vh;
-    height:calc(var(--vh,1vh)*32.9);
+#producciones .grid .grid-elem {
+    height:34vh;
+    height:calc(var(--vh,1vh)*34);
 }
 
 #explora .grid{
@@ -589,9 +590,10 @@ h5{
     cursor:default;
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     border:solid 2px #333;
     padding: 0 7%;
+    height:50vh;
 }
 
 /*Ventana emergente*/
@@ -952,10 +954,11 @@ footer{
         min-height:12vh;   
     }
 
-    #servicios .grid{
-        width:95%;
-        margin:0 auto;
+    #servicios .grid .grid-elem{
+        height:30vh;
     }
+
+
 
     #home{
         align-items:center;

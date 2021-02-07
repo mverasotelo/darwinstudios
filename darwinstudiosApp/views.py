@@ -1,9 +1,10 @@
+from django.conf import settings
 from django.http import HttpResponse
 import datetime
 from django.template import Template,loader
 from django.template.loader import get_template
 from django.shortcuts import render
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from .forms import FormContacto
 
 def index(request):
@@ -27,8 +28,12 @@ def contacto(request):
             email=formulario.cleaned_data['email']
             telefono=str(formulario.cleaned_data['telefono'])
             mensaje=formulario.cleaned_data['mensaje']
+            text_content = "Nombre: "+nombre+"\n Email: "+email+"\n Teléfono: "+telefono+"\n Mensaje: "+mensaje
+            html_content = "<div style='padding:2rem;background:black;color:white;font-size:1rem'><h1 style='color:#f8a52d'>Darwin Studios</h1><p>Nombre: "+nombre+"</p><p>Email: "+email+"</p><p>Teléfono: "+telefono+"</p><p>Mensaje:<br>"+mensaje+"</p></div>"
+            msg = EmailMultiAlternatives("Consulta de "+nombre, text_content, "", ["mer-vs@hotmail.com"])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send(fail_silently=True)
             confirmacion="¡Muchas gracias por pensar en Darwin Studios!"
-            send_mail("Consulta de "+nombre, "\n Nombre: "+nombre+"\n Email: "+email+"\n Teléfono: "+telefono+"\n Mensaje: "+mensaje, "merverasotelo@gmail.com", [""], fail_silently=False)
         return render(request,"contacto.html", {"formulario": FormContacto(), "confirmacion":confirmacion})
     else:
         formulario=FormContacto()

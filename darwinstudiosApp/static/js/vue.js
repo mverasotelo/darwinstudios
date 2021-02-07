@@ -119,70 +119,89 @@ new Vue({
     el:"#producciones",
     data:{
         popUp:"",
-        producciones:["Converse", "Esta noche🌙","You Tube","Solita RMX","Perdiste por gil","Mutis","Buena Vibra y 1+1","Comicon","Cyberpunk","Plata Quemada"],
-        videos:["https://www.youtube.com/embed/nThgp6a_OZM","https://www.youtube.com/embed/Z-TkiF4xeJ0","","https://www.youtube.com/embed/RCnursIWCmY","https://www.youtube.com/embed/Z9IMV4fFsoI","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/0MGCMyVVpHc","","https://www.youtube.com/embed/SUschdjn0mc"],   
+        producciones:["Esta noche🌙","Solita RMX","JAE 2020", "Agapornis","You Tube","Converse","Comicon","Cyberpunk2077","Buena Vibra y 1+1","Plata Quemada"],
+        videos:["https://www.youtube.com/embed/Z-TkiF4xeJ0","https://www.youtube.com/embed/RCnursIWCmY","","https://www.youtube.com/embed/Z9IMV4fFsoI","","https://www.youtube.com/embed/nThgp6a_OZM","https://www.youtube.com/embed/0MGCMyVVpHc","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/SUschdjn0mc"],   
         videoUrl:"",
-        imagenes:[["/static/img/Converse1.jpg","/static/img/Converse2.jpg","/static/img/Converse3.jpg","/static/img/Converse4.jpg"],
-        ["/static/img/EstaNoche1.jpg","/static/img/EstaNoche2.jpg","/static/img/EstaNoche3.jpg","/static/img/EstaNoche4.jpg","/static/img/EstaNoche5.jpg"],
-        ["/static/img/Youtube.jpg", "/static/img/Youtube2.jpg", "/static/img/Youtube3.jpg", "/static/img/Dstudio1.jpg"],
-        ["/static/img/Hall1.jpg","/static/img/Hall2.jpg"],
-        ["/static/img/Dstudio1.jpg","/static/img/Dstudio2.jpg","/static/img/Dstudio3.jpg"],
-        ["/static/img/1+1studio2.jpg"],
-        ["/static/img/Exteriores2.jpg"],
-        ["/static/img/Terraza2.jpg"]],
+        imagenes:[["/static/img/EstaNoche2.jpg","/static/img/EstaNoche3.jpg"],
+        ["/static/img/SolitaRMX1.jpg","/static/img/SolitaRMX2.jpg"],
+        [],
+        ["/static/img/Agapornis1.jpg", "/static/img/Agapornis2.jpg"],
+        ["/static/img/Youtube1.jpg","/static/img/Youtube3.jpg"],
+        [],
+        [],
+        ["/static/img/Cyberpunk1.jpg","/static/img/Cyberpunk2.jpg"],
+        [],
+        []],
         imagenTrabajo:"",
         tempFoto:0,
         tempTrabajo:0,
         contenidoTrabajo:"",
-        next:"icon",
-        back:"icon"
-
+        next:"next icon fas fa-angle-right",
+        back:"disabled-icon",
     },
     methods:{
         infoTrabajo: function(n){
+            //abrir cuadro de la producción
             this.tempTrabajo=n;
-            this.back="disabled-icon";
-            this.next="icon";
             this.popUp="popUp";
-            this.videoUrl=this.videos[n];
-            this.imagenTrabajo=this.imagenes[n][0];
-            this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[n]+"' title='"+this.producciones[n]+"'>";
             document.body.style.overflow='hidden';
+            //manejo de controles
+            this.back="disabled-icon";
+            //establecer imagen o video inicial
+            this.videoUrl=this.videos[n];                
+            this.imagenTrabajo=this.imagenes[n][0];
+            if(this.imagenes[n].length>0){
+                this.cargarFoto();
+            }
+            else{
+                this.cargarVideo();
+            }
+            //manejo de controles
+            if(this.imagenes[this.tempTrabajo].length!=0){
+                this.next="next icon fas fa-angle-right";
+            }
+            else{
+                this.next="disabled-icon";
+            }
         },
         cerrarCuadro: function(){
             this.popUp="";
-            this.videoUrl=null;
+            this.contenidoTrabajo="";
             this.tempFoto=0;
             document.body.style.overflow='auto';
             },
         pasarFoto: function(){
+            //pasar foto a otra foto
             if(this.tempFoto<(this.imagenes[this.tempTrabajo].length)-1){
-                this.tempFoto=this.tempFoto+1;
-                this.back="icon";
-                this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
-                this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[this.tempTrabajo]+"' title='"+this.producciones[this.tempTrabajo]+"'>";
+                this.tempFoto++;
+                this.cargarFoto();
             }
-            if(this.tempFoto==(this.imagenes[this.tempTrabajo].length)-1){
-                if(this.videos[this.tempTrabajo].length!=0){
+            //pasar ultima foto a video
+            else{
+                if(this.videos[this.tempTrabajo]!=""){
                     this.cargarVideo();
+                    this.tempFoto++;
                 }
                 this.next="disabled-icon";
             }
+            this.back="back icon fas fa-angle-left";
         },
         retrocederFoto: function(){
             if(this.tempFoto>0){
-                this.tempFoto=this.tempFoto-1;
-                this.next="icon";
-                this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
-                this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[this.tempTrabajo]+"' title='"+this.producciones[this.tempTrabajo]+"'>";
+                this.tempFoto--;
+                if(this.tempFoto==0){
+                    this.back="disabled-icon";
+                }
             }
-            if(this.tempFoto==0){          
-                this.back="disabled-icon";
-                this.next="icon";
-            }
+            this.next="next icon fas fa-angle-right";
+            this.cargarFoto();
         },
         cargarVideo: function(){
             this.contenidoTrabajo="<iframe src='"+this.videoUrl+"' frameborder='0' allow='accelerometer' controls='0'; autoplay allowfullscreen></iframe>";
+        },
+        cargarFoto: function(){
+            this.imagenTrabajo=this.imagenes[this.tempTrabajo][this.tempFoto];
+            this.contenidoTrabajo="<img src='"+this.imagenTrabajo+"' alt ='"+this.producciones[this.tempTrabajo]+"' title='"+this.producciones[this.tempTrabajo]+"'>";
         }
     }
 });
