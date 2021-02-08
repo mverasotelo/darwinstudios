@@ -11,9 +11,6 @@
             <p>+54 9 1162896589</p>
         </section>
         <section class="formulario">
-            {% if formulario.errors %}
-                <p style="color:red">Por favor, revisa este campo</p>
-            {% endif %}
             <form method="POST" action="">{% csrf_token %}
                 {{ formulario.as_table}}
                 <input type="submit" value="ENVIAR">

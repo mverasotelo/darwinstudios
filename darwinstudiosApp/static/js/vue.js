@@ -180,11 +180,11 @@ new Vue({
             else{
                 if(this.videos[this.tempTrabajo]!=""){
                     this.cargarVideo();
-                    this.tempFoto++;
                 }
-                this.next="disabled-icon";
-            }
+            this.tempFoto++;
+            this.next="disabled-icon";
             this.back="back icon fas fa-angle-left";
+            }
         },
         retrocederFoto: function(){
             if(this.tempFoto>0){

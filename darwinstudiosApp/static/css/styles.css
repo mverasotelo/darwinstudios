@@ -590,10 +590,10 @@ h5{
     cursor:default;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border:solid 2px #333;
-    padding: 0 7%;
-    height:50vh;
+    padding: 15% 7%;
+    min-height:50vh;
 }
 
 /*Ventana emergente*/
@@ -769,6 +769,11 @@ footer{
         left:0;
         top:0;    
         border:none;
+    }
+
+    #producciones .cuadro{
+        height:calc(var(--vh,1vh)*100);
+        height:100vh;
     }
 
     .cuadro .texto{
@@ -955,10 +960,9 @@ footer{
     }
 
     #servicios .grid .grid-elem{
-        height:30vh;
+        padding:0 3%;
+        min-height:30vh;
     }
-
-
 
     #home{
         align-items:center;

@@ -21,6 +21,7 @@ def nosotros(request):
 
 def contacto(request):
     if request.method=="POST":
+        confirmacion=""
         formulario=FormContacto(request.POST)   
         if formulario.is_valid():
             formulario.save()
@@ -30,11 +31,14 @@ def contacto(request):
             mensaje=formulario.cleaned_data['mensaje']
             text_content = "Nombre: "+nombre+"\n Email: "+email+"\n Teléfono: "+telefono+"\n Mensaje: "+mensaje
             html_content = "<div style='padding:2rem;background:black;color:white;font-size:1rem'><h1 style='color:#f8a52d'>Darwin Studios</h1><p>Nombre: "+nombre+"</p><p>Email: "+email+"</p><p>Teléfono: "+telefono+"</p><p>Mensaje:<br>"+mensaje+"</p></div>"
-            msg = EmailMultiAlternatives("Consulta de "+nombre, text_content, "", ["mer-vs@hotmail.com"])
+            msg = EmailMultiAlternatives("Consulta de "+nombre, text_content, "", ["info@darwinstudios.com.ar"])
             msg.attach_alternative(html_content, "text/html")
-            msg.send(fail_silently=True)
+            msg.send(fail_silently=False)
             confirmacion="¡Muchas gracias por pensar en Darwin Studios!"
-        return render(request,"contacto.html", {"formulario": FormContacto(), "confirmacion":confirmacion})
+            return render(request,"contacto.html", {"formulario": FormContacto(), "confirmacion":confirmacion})
+        else:
+            confirmacion="Mensaje no enviado. Revisá que que tu e-mail esté escrito correctamente."
+            return render(request,"contacto.html", {"formulario": FormContacto(request.POST), "confirmacion":confirmacion})
     else:
         formulario=FormContacto()
         mensaje=""
