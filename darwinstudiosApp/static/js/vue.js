@@ -41,6 +41,7 @@ new Vue({
         ["Propuesta integral de estudio y técnica, a cargo de Darwin Studios, Repila Corporate y Streamcenter BA","Venue: Nave Niceto","Incluye estacionamiento, exteriores y Hall","Iluminación","Sonido","Video y pantalla LED","Streaming"],
         ["Dimensiones: 43m x 25 m","Superficie: 1075 m²"],
         ["Un espacio único y en continua transformación, compartido por creadores y artistas","Ideal para acciones con formato Tiny Desk"],
+        ["Mucho de la arquitectura de la vieja fábrica de muebles Nordiska Companiet aún se conserva en Darwin Studios.","Entre los estudios y las naves, hay escaleras antiguas, pasillos anchos y largos, terrazas, depósitos, salas de máquinas y estructuras de hierro para dejarse sorprender y aprovechar."],
         ],
         caracteristica:"",
         titulo:"",
