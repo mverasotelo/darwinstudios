@@ -15,7 +15,7 @@
             <div @click="infoTrabajo(7)" class="grid-elem" style="background-image:url('{% static 'img/Cyberpunk.jpg'%}')"><div class="filter"></div><div>CyberPunk2077</div></div>
             <div @click="infoTrabajo(8)" class="grid-elem" style="background-image:url('{% static 'img/BuenaVibra.png'%}')"><div class="filter"></div><div>Sesiones Buena Vibra y 1+1</div></div>
             <div @click="infoTrabajo(9)" class="grid-elem" style="background-image:url('{% static 'img/PlataQuemada.jpg'%}')"><div class="filter"></div><div>Plata Quemada</div></div>
-            <div class="pop-up" v-show="popUp">
+            <div class="pop-up" v-show="popUp" v-cloak>
                 <div class="cuadro">
                     <div id="contenidoTrabajo" v-html="contenidoTrabajo"></div>
                     <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>

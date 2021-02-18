@@ -29,7 +29,7 @@
             <div @click="infoEspacio(5)" class="grid-elem" style="background-image:url('{% static 'img/Exteriores.jpg'%}')"><div class="filter"></div><div>EXTERIORES</div></div>                
             <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Studio1+1.png'%}')"><div class="filter"></div><div>ESPACIO 1+1</div></div>
             <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/Converse1.jpg'%}')"><div class="filter"></div><div>LADO B</div></div>
-            <div class="pop-up" v-show="popUp">
+            <div class="pop-up" v-show="popUp" v-cloak>
                 <div class="cuadro" scrolling="yes">
                     <div class="carrousel">
                         <img v-bind:src="imagenEspacio" v-bind:alt="titulo" v-bind:title="titulo">

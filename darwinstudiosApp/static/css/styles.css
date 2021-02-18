@@ -32,6 +32,10 @@
     }
 }
 
+[v-cloak] {
+    display: none;
+}
+
 html{
     font-size:90%;
     font-family:'Fogie-Light','Work Sans', sans-serif;
