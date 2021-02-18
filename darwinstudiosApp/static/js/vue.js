@@ -102,12 +102,12 @@ new Vue({
                 this.plano="plano";
                 this.planoHref="/static/img/DarwinStudios_Plano.pdf";
             }
-            if(this.tempEspacio==3){
+            else if(this.tempEspacio==3){
                 this.plano="plano";
                 this.texto="Ver Plano"
-                this.planoHref="/static/img/DarwinStudios_Fabrica_Plano.pdf";
+                this.planoHref="/static/img/DarwinStudios_NaveD_Plano.pdf";
             }
-            if(this.tempEspacio==4){
+            else if(this.tempEspacio==4){
                 this.plano="plano";
                 this.texto="Ver Propuesta"
                 this.planoHref="/static/img/DarwinStudios_Propuesta_Streaming.pdf";
@@ -121,11 +121,11 @@ new Vue({
     data:{
         popUp:"",
         producciones:["Esta noche🌙","Solita RMX","JAE 2020", "Agapornis","You Tube","Converse","Comicon","Cyberpunk2077","Buena Vibra y 1+1","Plata Quemada"],
-        videos:["https://www.youtube.com/embed/Z-TkiF4xeJ0","https://www.youtube.com/embed/RCnursIWCmY","","https://www.youtube.com/embed/Z9IMV4fFsoI","","https://www.youtube.com/embed/nThgp6a_OZM","https://www.youtube.com/embed/0MGCMyVVpHc","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/SUschdjn0mc"],   
+        videos:["https://www.youtube.com/embed/8GdGsceR2ps","https://www.youtube.com/embed/W2prMZ4Hkwg","https://www.youtube.com/embed/ONabCeBoMFQ","https://www.youtube.com/embed/PU3_T0SA6-o","","https://www.youtube.com/embed/0AchE2sciN4","https://www.youtube.com/embed/sscv70vJAkc","","https://www.youtube.com/embed/1t7J90rAr3I","https://www.youtube.com/embed/SUschdjn0mc"],   
         videoUrl:"",
         imagenes:[["/static/img/EstaNoche2.jpg","/static/img/EstaNoche3.jpg"],
         ["/static/img/SolitaRMX1.jpg","/static/img/SolitaRMX2.jpg"],
-        [],
+        ["/static/img/JAE2020-1.jpg","/static/img/JAE2020-2.jpg"],
         ["/static/img/Agapornis1.jpg", "/static/img/Agapornis2.jpg"],
         ["/static/img/Youtube1.jpg","/static/img/Youtube3.jpg"],
         [],

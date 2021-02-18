@@ -30,7 +30,7 @@
             <div @click="infoEspacio(6)" class="grid-elem" style="background-image:url('{% static 'img/Studio1+1.png'%}')"><div class="filter"></div><div>ESPACIO 1+1</div></div>
             <div @click="infoEspacio(7)" class="grid-elem" style="background-image:url('{% static 'img/Converse1.jpg'%}')"><div class="filter"></div><div>LADO B</div></div>
             <div class="pop-up" v-show="popUp">
-                <div class="cuadro" scrolling="yes" v-on:swipeleft="pasarFoto">
+                <div class="cuadro" scrolling="yes">
                     <div class="carrousel">
                         <img v-bind:src="imagenEspacio" v-bind:alt="titulo" v-bind:title="titulo">
                         <div :class="next" @click="pasarFoto()" tabindex="0"></div>
@@ -40,7 +40,7 @@
                         <h4>{[titulo]}</h4>
                         <br>
                         <p v-for="(val) in caracteristica">{[val]}</p>
-                        <p v-show="plano" class="plano"><a :href="planoHref" v-html="texto"></a></p>
+                        <p v-show="plano" class="plano"><a :href="planoHref" v-html="texto" @click></a></p>
                     </div>
                         <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
                 </div>
